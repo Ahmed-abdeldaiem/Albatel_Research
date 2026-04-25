@@ -80,25 +80,25 @@ export function HomeLanding() {
               {t("hero.badge")}
             </p>
             <h1
-              className="mt-5 text-balance text-3xl font-extrabold leading-[1.18] tracking-tight text-white sm:mt-6 sm:text-4xl md:text-5xl lg:text-[3.25rem]"
+              className="mt-5 text-pretty text-3xl font-extrabold leading-snug tracking-tight text-white sm:mt-6 sm:text-4xl sm:leading-[1.2] md:text-5xl md:leading-[1.18] lg:text-[3.25rem]"
               data-aos="fade-up"
               data-aos-delay="60"
             >
               {t("hero.titleLead") ? (
                 <>
                   <span className="text-white/95">{t("hero.titleLead")} </span>
-                  <span className="bg-gradient-to-l from-brand-300 via-brand-400 to-cyan-300 bg-clip-text text-transparent">
+                  <span className="box-decoration-clone bg-gradient-to-l from-brand-300 via-brand-400 to-cyan-300 bg-clip-text text-transparent">
                     {t("hero.titleAccent")}
                   </span>
-                  <br className="hidden sm:block" />
+                  <br />
                   <span className="text-white">{t("hero.titleRest")}</span>
                 </>
               ) : (
                 <>
-                  <span className="bg-gradient-to-l from-brand-300 via-brand-400 to-cyan-300 bg-clip-text text-transparent">
+                  <span className="box-decoration-clone bg-gradient-to-l from-brand-300 via-brand-400 to-cyan-300 bg-clip-text text-transparent">
                     {t("hero.titleAccent")}
                   </span>
-                  <br className="hidden sm:block" />
+                  <br />
                   <span className="text-white">{t("hero.titleRest")}</span>
                 </>
               )}
