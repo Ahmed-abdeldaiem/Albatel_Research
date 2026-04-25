@@ -15,25 +15,32 @@ export const SECTION_IMAGES = [
   "/Section_Images/4.jpg",
 ] as const;
 
-/** صورة ترويجية للمؤلفات في الصفحة الرئيسية (`public/Books/Books2.png`) */
-export const BOOKS_HOME_PROMO_IMAGE = "/Books/Books2.png";
+/**
+ * أصول الكتب والمعارض: ضع الملفات في **جذر** `public/` (مثل `public/Book1.JPG`)
+ * حتى تعمل على الاستضافة الحساسة لحالة الأحرف (Linux) — وليس داخل `public/Books/` إلا إن نسختها هناك.
+ */
+export const BOOKS_HOME_PROMO_IMAGE = "/Books2.png";
 
-/** معرض القاهرة الدولي للكتاب — `public/Books/Cairo*.jfif` */
+/** معرض القاهرة — `public/Cairo*.jfif` */
 export const BOOK_GALLERY_CAIRO = [
-  "/Books/Cairo1.jfif",
-  "/Books/Cairo2.jfif",
-  "/Books/Cairo3.jfif",
-  "/Books/Cairo4.jfif",
+  "/Cairo1.jfif",
+  "/Cairo2.jfif",
+  "/Cairo3.jfif",
+  "/Cairo4.jfif",
 ] as const;
 
-/** معرض الرياض الدولي للكتاب — `public/Books/Riyad*.jfif` (اسم الملف Riyad وليس Riyadh) */
+/** معرض الرياض — `public/Riyad*.jfif` */
 export const BOOK_GALLERY_RIYADH = [
-  "/Books/Riyad1.jfif",
-  "/Books/Riyad2.jfif",
-  "/Books/Riyad3.jfif",
-  "/Books/Riyad4.jfif",
-  "/Books/Riyad5.jfif",
+  "/Riyad1.jfif",
+  "/Riyad2.jfif",
+  "/Riyad3.jfif",
+  "/Riyad4.jfif",
+  "/Riyad5.jfif",
 ] as const;
 
-/** صورة توثيقية لمكتبة جرير إن وُجدت الملف */
-export const BOOK_GALLERY_JARIR = ["/Books/Jarir.jfif"] as const;
+/** جرير — `public/Jarir.jfif` */
+export const BOOK_GALLERY_JARIR = ["/Jarir.jfif"] as const;
+
+export const BOOK_COVER_FOOTBALL = "/Book1.JPG";
+export const BOOK_COVER_INTERNAL = "/Book2.jfif";
+export const BOOK_COVER_CORRUPTION = "/Book3.jpeg";

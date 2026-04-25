@@ -1,6 +1,9 @@
 import type { Locale } from "@/lib/i18n";
 import { boardMembers } from "@/lib/board";
 import {
+  BOOK_COVER_CORRUPTION,
+  BOOK_COVER_FOOTBALL,
+  BOOK_COVER_INTERNAL,
   BOOK_GALLERY_CAIRO,
   BOOK_GALLERY_JARIR,
   BOOK_GALLERY_RIYADH,
@@ -13,7 +16,7 @@ export type BookAuthorKey = keyof typeof MEMBER_FILES;
 
 export type BookRecord = {
   slug: BookSlug;
-  /** غلاف الإصدار تحت `/public/Books/` */
+  /** غلاف الإصدار — مسار من جذر `public/` (مثل `/Book1.JPG`) */
   cover: string;
   status: "published" | "coming_soon";
   /** يطابق مفاتيح `pub.*` في ملفات الترجمة */
@@ -30,7 +33,7 @@ export type BookRecord = {
 export const BOOKS: BookRecord[] = [
   {
     slug: "football-economics",
-    cover: "/Books/Book1.JPG",
+    cover: BOOK_COVER_FOOTBALL,
     status: "published",
     i18nKey: "football",
     referenceUrl: "https://www.albatelcpa.com/publications/football-economics",
@@ -43,7 +46,7 @@ export const BOOKS: BookRecord[] = [
   },
   {
     slug: "internal-audit",
-    cover: "/Books/Book2.jfif",
+    cover: BOOK_COVER_INTERNAL,
     status: "published",
     i18nKey: "internal",
     referenceUrl: "https://www.albatelcpa.com/publications/internal-audit",
@@ -57,7 +60,7 @@ export const BOOKS: BookRecord[] = [
   },
   {
     slug: "corruption",
-    cover: "/Books/Book3.jpeg",
+    cover: BOOK_COVER_CORRUPTION,
     status: "coming_soon",
     i18nKey: "corruption",
     referenceUrl: "https://www.albatelcpa.com/publications",
