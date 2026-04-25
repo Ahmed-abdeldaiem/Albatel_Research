@@ -1,6 +1,11 @@
 import type { Locale } from "@/lib/i18n";
-import { MEMBER_FILES } from "@/lib/public-assets";
 import { boardMembers } from "@/lib/board";
+import {
+  BOOK_GALLERY_CAIRO,
+  BOOK_GALLERY_JARIR,
+  BOOK_GALLERY_RIYADH,
+  MEMBER_FILES,
+} from "@/lib/public-assets";
 
 export type BookSlug = "football-economics" | "internal-audit" | "corruption";
 
@@ -22,23 +27,6 @@ export type BookRecord = {
   };
 };
 
-const galleryCairo = [
-  "/Books/Cairo1.jfif",
-  "/Books/Cairo2.jfif",
-  "/Books/Cairo3.jfif",
-  "/Books/Cairo4.jfif",
-] as const;
-
-const galleryRiyadh = [
-  "/Books/Riyad1.jfif",
-  "/Books/Riyad2.jfif",
-  "/Books/Riyad3.jfif",
-  "/Books/Riyad4.jfif",
-  "/Books/Riyad5.jfif",
-] as const;
-
-const galleryJarir = ["/Books/Jarir.jfif"] as const;
-
 export const BOOKS: BookRecord[] = [
   {
     slug: "football-economics",
@@ -48,9 +36,9 @@ export const BOOKS: BookRecord[] = [
     referenceUrl: "https://www.albatelcpa.com/publications/football-economics",
     authorKeys: ["batil", "mohamed", "walid"],
     galleries: {
-      cairo: [...galleryCairo],
-      riyadh: [...galleryRiyadh],
-      jarir: [...galleryJarir],
+      cairo: [...BOOK_GALLERY_CAIRO],
+      riyadh: [...BOOK_GALLERY_RIYADH],
+      jarir: [...BOOK_GALLERY_JARIR],
     },
   },
   {
@@ -61,8 +49,8 @@ export const BOOKS: BookRecord[] = [
     referenceUrl: "https://www.albatelcpa.com/publications/internal-audit",
     authorKeys: ["batil", "mohamed", "walid"],
     galleries: {
-      cairo: [...galleryCairo],
-      riyadh: [...galleryRiyadh],
+      cairo: [...BOOK_GALLERY_CAIRO],
+      riyadh: [...BOOK_GALLERY_RIYADH],
       /** جرير: الإصدار الأول (اقتصاديات كرة القدم) فقط — لا يُعرض هذا الكتاب في جرير */
       jarir: [],
     },
