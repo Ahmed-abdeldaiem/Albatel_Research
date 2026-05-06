@@ -8,6 +8,11 @@ import toast from "react-hot-toast";
 import * as Yup from "yup";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getBook, publishedBooks } from "@/lib/books";
+import {
+  EGYPT_GOVERNORATES,
+  EGYPT_GOVERNORATE_VALUES,
+} from "@/lib/egypt-governorates";
+import { isValidPhone } from "@/lib/phone";
 
 type FormValues = {
   bookSlug: string;
@@ -45,7 +50,10 @@ export function BookOrderForm() {
         bookSlug: Yup.string().required(t("pub.order.errBook")),
         name: Yup.string().trim().required(t("pub.order.errName")),
         email: Yup.string().trim().email(t("pub.order.errEmail")).required(t("pub.order.errEmail")),
-        phone: Yup.string().trim(),
+        phone: Yup.string()
+          .trim()
+          .required(t("pub.order.errPhone"))
+          .test("valid-phone", t("pub.order.errPhoneInvalid"), (v) => isValidPhone(v)),
         copies: Yup.number()
           .transform((_, orig) => {
             if (orig === "" || orig === undefined || orig === null) return undefined;
@@ -56,7 +64,10 @@ export function BookOrderForm() {
           .integer(t("pub.order.errCopies"))
           .min(1, t("pub.order.errCopies"))
           .required(t("pub.order.errCopies")),
-        city: Yup.string().trim(),
+        city: Yup.string()
+          .trim()
+          .oneOf([...EGYPT_GOVERNORATE_VALUES], t("pub.order.errCity"))
+          .required(t("pub.order.errCity")),
         notes: Yup.string().trim(),
       }),
     [t],
@@ -126,7 +137,7 @@ export function BookOrderForm() {
           }
         }}
       >
-        {({ isSubmitting }) => (
+        {({ isSubmitting, validateForm }) => (
           <Form className="mt-8 space-y-5">
             <div>
               <label
@@ -211,7 +222,15 @@ export function BookOrderForm() {
                   id="ord-phone"
                   name="phone"
                   type="tel"
+                  autoComplete="tel"
+                  inputMode="tel"
+                  placeholder="+20 1XX XXX XXXX"
                   className="w-full rounded-xl border border-slate-200/90 bg-white px-4 py-3 text-sm text-slate-900 shadow-inner outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-400/30 dark:border-white/10 dark:bg-ink-950 dark:text-white"
+                />
+                <ErrorMessage
+                  name="phone"
+                  component="p"
+                  className="mt-1 text-xs font-medium text-red-600 dark:text-red-400"
                 />
               </div>
               <div>
@@ -244,11 +263,26 @@ export function BookOrderForm() {
                 {t("pub.order.city")}
               </label>
               <Field
+                as="select"
                 id="ord-city"
                 name="city"
-                type="text"
                 className="w-full rounded-xl border border-slate-200/90 bg-white px-4 py-3 text-sm text-slate-900 shadow-inner outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-400/30 dark:border-white/10 dark:bg-ink-950 dark:text-white"
+              >
+                <option value="">{t("pub.order.cityPlaceholder")}</option>
+                {EGYPT_GOVERNORATES.map((g) => (
+                  <option key={g.value} value={g.value}>
+                    {locale === "ar" ? g.ar : `${g.en} — ${g.ar}`}
+                  </option>
+                ))}
+              </Field>
+              <ErrorMessage
+                name="city"
+                component="p"
+                className="mt-1 text-xs font-medium text-red-600 dark:text-red-400"
               />
+              <p className="mt-1.5 text-xs text-slate-500 dark:text-slate-500">
+                {t("pub.order.cityHint")}
+              </p>
             </div>
 
             <div>
@@ -272,6 +306,12 @@ export function BookOrderForm() {
             <button
               type="submit"
               disabled={isSubmitting}
+              onClick={async () => {
+                const errs = await validateForm();
+                if (Object.keys(errs).length > 0) {
+                  toast.error(t("pub.order.toastValidate"));
+                }
+              }}
               className="w-full rounded-xl bg-gradient-to-l from-brand-500 to-brand-600 py-3.5 text-sm font-bold text-white shadow-lg transition hover:brightness-110 disabled:opacity-60 dark:text-ink-950 sm:w-auto sm:px-10"
             >
               {isSubmitting ? t("pub.order.submitting") : t("pub.order.submit")}

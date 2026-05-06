@@ -18,6 +18,62 @@ export const pubLocalesAr = {
     cardCta: "تفاصيل الإصدار",
     cardOrder: "طلب نسخة",
     labelsPublished: "منشور في مصر والمملكة",
+
+    // ───── بيان المنهجية ─────
+    manifestoKicker: "فلسفتنا في النشر",
+    manifestoTitle: "إصداراتنا.. بصمة فكرية تُثري المكتبة العربية",
+    manifestoBody:
+      "من صفحات كتبنا، تولد الأفكار التي تغيّر وجه المستقبل. كتابنا ليس مجرد ورق، بل رحلة بحثية مغلّفة بالمنطق والتحليل. ننتقي ما ننشر لنقدّم للقارئ زادًا فكريًا يليق بمستوى طموحه — وفي كل إصدار نلتزم بأن نكون بصمة معرفية موثوقة في المكتبة العربية على امتداد مصر والوطن العربي.",
+
+    // ───── قيمنا في الإصدار (4 بطاقات) ─────
+    qualitiesKicker: "ما يميّز إصداراتنا",
+    qualitiesTitle: "أربع قيم تُشكّل بصمة كل كتاب",
+    qualitiesIntro:
+      "بين دفتي كل كتاب نُصدره، التزام منهجي بأربع قيم لا نتنازل عنها.",
+    q1T: "الانتقاء قبل النشر",
+    q1D: "نختار الموضوعات التي تُضيف للمكتبة العربية حقًّا، لا التي تكرّر ما هو متوفّر.",
+    q2T: "الأصالة والابتكار",
+    q2D: "نمنح القارئ زادًا فكريًا أصيلًا، لا اقتباسات مُعادة الصياغة.",
+    q3T: "الدقة العلمية",
+    q3D: "تحرير ومراجعة بمعايير صارمة قبل أي إصدار، مع توثيق كامل للمصادر.",
+    q4T: "الشراكة المهنية",
+    q4D: "تعاون مع دور النشر الأكاديمية لضمان جودة الطبع والتوزيع داخل الوطن العربي.",
+
+    // ───── مراحل الإصدار (5 خطوات) ─────
+    processKicker: "كيف نُصدر؟",
+    processTitle: "رحلة الكتاب من الفكرة إلى القارئ",
+    processIntro:
+      "خمس مراحل تمرّ بها الفكرة لتصل إلى رفّ مكتبتك بصيغة احترافية تليق بقارئنا.",
+    p1T: "اختيار الموضوع",
+    p1D: "تحديد الفجوة المعرفية في المكتبة العربية والموضوع الذي يُسهم في سدّها.",
+    p2T: "البحث والتأليف",
+    p2D: "صياغة المحتوى بمنهجية بحثية رصينة وتوثيق شامل للمصادر.",
+    p3T: "التحرير المهني",
+    p3D: "ضبط لغوي وأسلوبي مع مراجعة علمية مزدوجة قبل التسليم للنشر.",
+    p4T: "النشر والطباعة",
+    p4D: "بالتعاون مع شركاء نشر متخصصين لضمان جودة الإخراج والطباعة.",
+    p5T: "التوزيع والوصول",
+    p5D: "إيصال الكتاب للقارئ في مصر والمحيط العربي عبر قنوات معتمدة.",
+
+    // ───── أسئلة شائعة ─────
+    faqKicker: "أسئلة متكررة",
+    faqTitle: "إجابات تتوقّعها",
+    faq1Q: "كيف يمكنني طلب نسخة داخل مصر؟",
+    faq1A: "استخدم نموذج الطلب من صفحة الإصدار أو زر «طلب نسخة» في صفحة الإصدارات. سيصلك الطلب إلى المؤسسة وسنعاود التواصل معك خلال 24 إلى 48 ساعة عمل لتأكيد التفاصيل وطريقة الاستلام أو الشحن.",
+    faq2Q: "هل تتوفّر الكتب خارج مصر؟",
+    faq2A: "نعم — يتوفّر بعض إصداراتنا في معارض الكتاب الدولية وفي مكتبة جرير داخل المملكة العربية السعودية. للحصول على نسخة في دول عربية أخرى تواصل معنا عبر النموذج لنرشدك إلى أنسب القنوات.",
+    faq3Q: "ما هي تكلفة الكتاب وأسعار الشحن؟",
+    faq3A: "تختلف الأسعار حسب الإصدار والكمية. أرسل طلبًا عبر النموذج وستصلك قائمة أسعار محدّثة تشمل الشحن داخل محافظات مصر، أو تكاليف الاستلام الذاتي.",
+    faq4Q: "هل تقدّمون خصومات للجامعات والمكتبات؟",
+    faq4A: "نعم — نوفّر أسعارًا خاصة للجامعات، المكتبات الأكاديمية، والمؤسسات التعليمية التي تطلب كميات. اذكر الجهة في خانة الملاحظات وسنرسل لك عرضًا مناسبًا.",
+    faq5Q: "هل يمكنني اقتباس مادة من الكتاب لبحثي؟",
+    faq5A: "بكل تأكيد — مع الالتزام بقواعد التوثيق العلمي وذكر المصدر. للاقتباسات المطوّلة (أكثر من 10% من الكتاب) يُرجى التواصل معنا لطلب إذن مكتوب.",
+    faq6Q: "متى ستصدر إصدارات جديدة؟",
+    faq6A: "يعمل فريقنا على إصدارات جديدة باستمرار في تخصصات متنوعة — من المحاسبة والمراجعة إلى الاقتصاد والإدارة. تابع صفحتنا وقنواتنا الرسمية للإعلان عن كل جديد.",
+
+    // ───── خاتمة الصفحة ─────
+    closingQuote: "إصداراتنا ليست مجرد كتب — بل بصمة فكر تُثري المكتبة العربية",
+    closingCaption: "هذه فلسفتنا، وعلى أساسها يُولد كل كتاب نُصدره.",
   },
   football: {
     badge: "الأعلى مبيعاً",
@@ -57,6 +113,9 @@ export const pubLocalesAr = {
     externalDetails: "تفاصيل إضافية على موقع الشريك المهني",
     orderCta: "اطلب عبر البريد الرسمي",
     partnerPharos: "بالتعاون مع دار فاروس للنشر والتوزيع",
+    videoKicker: "فيديو تعريفي",
+    videoTitle: "تعرّف على الإصدار في دقائق",
+    videoSubtitle: "لقطات مختارة من حفل التدشين وآراء النقاد المتخصصين.",
   },
   internal: {
     badge: "تعريب مهني",
@@ -115,7 +174,9 @@ export const pubLocalesAr = {
     email: "البريد الإلكتروني",
     phone: "رقم الهاتف",
     copies: "عدد النسخ",
-    city: "المدينة / الدولة",
+    city: "المحافظة",
+    cityPlaceholder: "— اختر محافظتك —",
+    cityHint: "التوصيل داخل جمهورية مصر العربية فقط.",
     notes: "ملاحظات (عنوان التسليم، جهة عمل، إلخ)",
     submit: "إرسال الطلب إلى المؤسسة",
     submitting: "جاري الإرسال…",
@@ -124,10 +185,14 @@ export const pubLocalesAr = {
     toastErr: "تعذّر إرسال الطلب. حاول مرة أخرى لاحقاً.",
     toastErrConfig:
       "خدمة البريد غير مهيأة على الخادم. يرجى التواصل مع مسؤول الموقع لتفعيل SMTP.",
+    toastValidate: "يرجى مراجعة الحقول المطلوبة قبل الإرسال.",
     errName: "يرجى إدخال الاسم",
     errEmail: "يرجى إدخال بريد صالح",
     errCopies: "يرجى إدخال عدد نسخ صحيح (١ على الأقل)",
     errBook: "اختر إصداراً أو الاستفسار العام",
+    errCity: "يرجى اختيار المحافظة",
+    errPhone: "يرجى إدخال رقم الهاتف",
+    errPhoneInvalid: "يرجى إدخال رقم هاتف صالح",
   },
 } as const;
 
@@ -150,6 +215,57 @@ export const pubLocalesEn = {
     cardCta: "View title",
     cardOrder: "Request a copy",
     labelsPublished: "Published in Egypt & Saudi Arabia",
+
+    manifestoKicker: "Our publishing philosophy",
+    manifestoTitle: "Our publications — an intellectual mark on the Arabic library",
+    manifestoBody:
+      "From the pages of our books, ideas are born that change the face of the future. A book of ours is not mere paper, but a research journey wrapped in logic and analysis. We curate before we publish — to deliver intellectual nourishment worthy of our reader’s ambition, and to leave a trusted footprint across the Arabic library in Egypt and the wider Arab world.",
+
+    qualitiesKicker: "What sets our publications apart",
+    qualitiesTitle: "Four values that shape every book",
+    qualitiesIntro:
+      "Between the covers of every title we issue, an unwavering commitment to four guiding values.",
+    q1T: "Curation before publication",
+    q1D: "We choose subjects that genuinely add to the Arabic library — not those that repeat what is already available.",
+    q2T: "Originality & innovation",
+    q2D: "We offer the reader original intellectual nourishment — not paraphrased borrowings.",
+    q3T: "Scholarly precision",
+    q3D: "Rigorous editing and review before any release, with full source documentation.",
+    q4T: "Professional partnership",
+    q4D: "We collaborate with academic publishers to safeguard print quality and Arab-region distribution.",
+
+    processKicker: "How we publish",
+    processTitle: "The book’s journey — from idea to reader",
+    processIntro:
+      "Five stages our ideas pass through to reach your shelf in a form worthy of our reader.",
+    p1T: "Topic selection",
+    p1D: "Identifying knowledge gaps in the Arabic library and the topics best suited to fill them.",
+    p2T: "Research & authoring",
+    p2D: "Crafting content with rigorous research methodology and comprehensive sourcing.",
+    p3T: "Professional editing",
+    p3D: "Linguistic and stylistic refinement with double scholarly review before publication.",
+    p4T: "Print & publication",
+    p4D: "In partnership with specialist publishers to ensure print and design quality.",
+    p5T: "Distribution & reach",
+    p5D: "Delivering the book to readers across Egypt and the Arab world via approved channels.",
+
+    faqKicker: "Frequently asked",
+    faqTitle: "Answers you might be looking for",
+    faq1Q: "How can I order a copy inside Egypt?",
+    faq1A: "Use the order form on the title’s page, or the “Request a copy” button on the publications page. Your request reaches the foundation directly, and we get back to you within 24–48 working hours to confirm details and delivery options.",
+    faq2Q: "Are the books available outside Egypt?",
+    faq2A: "Yes — some titles are stocked at international book fairs and at Jarir Bookstore in Saudi Arabia. For copies in other Arab countries, contact us via the form and we will guide you to the most suitable channel.",
+    faq3Q: "What are the book and shipping costs?",
+    faq3A: "Prices vary by title and quantity. Send a request via the form and you will receive an updated price list including shipping inside Egypt’s governorates or self-pickup options.",
+    faq4Q: "Do you offer discounts for universities and libraries?",
+    faq4A: "Yes — we provide special pricing for universities, academic libraries, and institutions ordering in volume. Mention the entity in the notes field and we will share a tailored quote.",
+    faq5Q: "May I cite material from the book in my research?",
+    faq5A: "Absolutely — provided you respect academic citation rules and credit the source. For long excerpts (more than 10% of the book), please contact us to request written permission.",
+    faq6Q: "When will new titles be released?",
+    faq6A: "Our team continuously prepares new releases across diverse fields — from accounting and auditing to economics and management. Follow our official page and channels for announcements.",
+
+    closingQuote: "Our publications are not just books — they are a mark of thought enriching the Arabic library",
+    closingCaption: "This is our philosophy, and on its foundation every book is born.",
   },
   football: {
     badge: "Bestseller",
@@ -189,6 +305,9 @@ export const pubLocalesEn = {
     externalDetails: "Further details on the professional partner site",
     orderCta: "Order via official email",
     partnerPharos: "In cooperation with Pharos Publishing & Distribution",
+    videoKicker: "Introductory video",
+    videoTitle: "Get to know the title in minutes",
+    videoSubtitle: "Selected highlights from the launch and views from specialist critics.",
   },
   internal: {
     badge: "Professional adaptation",
@@ -247,7 +366,9 @@ export const pubLocalesEn = {
     email: "Email address",
     phone: "Phone number",
     copies: "Number of copies",
-    city: "City / country",
+    city: "Governorate",
+    cityPlaceholder: "— Select your governorate —",
+    cityHint: "Delivery is available within the Arab Republic of Egypt only.",
     notes: "Notes (delivery address, organisation, etc.)",
     submit: "Send request to the foundation",
     submitting: "Sending…",
@@ -256,9 +377,13 @@ export const pubLocalesEn = {
     toastErr: "Could not send the request. Please try again later.",
     toastErrConfig:
       "Mail is not configured on the server. Ask the site administrator to enable SMTP.",
+    toastValidate: "Please review the required fields before sending.",
     errName: "Please enter your name",
     errEmail: "Please enter a valid email",
     errCopies: "Enter a valid number of copies (at least 1)",
     errBook: "Choose a title or the general inquiry option",
+    errCity: "Please select a governorate",
+    errPhone: "Please enter your phone number",
+    errPhoneInvalid: "Please enter a valid phone number",
   },
 } as const;

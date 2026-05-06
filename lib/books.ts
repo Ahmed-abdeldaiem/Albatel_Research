@@ -28,6 +28,8 @@ export type BookRecord = {
     riyadh: string[];
     jarir: string[];
   };
+  /** معرّف فيديو يوتيوب اختياري (الجزء بعد `youtu.be/` أو `?v=`) — يُعرض في صفحة الكتاب إن وُجد */
+  youtubeId?: string;
 };
 
 export const BOOKS: BookRecord[] = [
@@ -43,6 +45,7 @@ export const BOOKS: BookRecord[] = [
       riyadh: [...BOOK_GALLERY_RIYADH],
       jarir: [...BOOK_GALLERY_JARIR],
     },
+    youtubeId: "PSjkFpmO0x8",
   },
   {
     slug: "internal-audit",

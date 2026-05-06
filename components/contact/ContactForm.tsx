@@ -5,6 +5,7 @@ import { useMemo } from "react";
 import toast from "react-hot-toast";
 import * as Yup from "yup";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { isValidPhone, MIN_MESSAGE_LENGTH } from "@/lib/phone";
 
 type FormValues = {
   name: string;
@@ -25,11 +26,14 @@ export function ContactForm() {
           .trim()
           .email(t("form.errEmail"))
           .required(t("form.errEmail")),
-        phone: Yup.string().trim(),
+        phone: Yup.string()
+          .trim()
+          .required(t("form.errPhone"))
+          .test("valid-phone", t("form.errPhoneInvalid"), (v) => isValidPhone(v)),
         subject: Yup.string().trim().required(t("form.errSubject")),
         message: Yup.string()
           .trim()
-          .min(20, t("form.errMessage"))
+          .min(MIN_MESSAGE_LENGTH, t("form.errMessage"))
           .required(t("form.errMessage")),
       }),
     [t],
@@ -90,7 +94,7 @@ export function ContactForm() {
           }
         }}
       >
-        {({ isSubmitting }) => (
+        {({ isSubmitting, validateForm }) => (
           <Form className="mt-8 space-y-5" lang={locale === "en" ? "en" : "ar"}>
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
@@ -147,7 +151,14 @@ export function ContactForm() {
                 name="phone"
                 type="tel"
                 autoComplete="tel"
+                inputMode="tel"
+                placeholder="+20 1XX XXX XXXX"
                 className="w-full rounded-xl border border-slate-200/90 bg-white px-4 py-3 text-sm text-slate-900 shadow-inner outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-400/30 dark:border-white/10 dark:bg-ink-950 dark:text-white"
+              />
+              <ErrorMessage
+                name="phone"
+                component="p"
+                className="mt-1 text-xs font-medium text-red-600 dark:text-red-400"
               />
             </div>
 
@@ -199,6 +210,12 @@ export function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
+              onClick={async () => {
+                const errs = await validateForm();
+                if (Object.keys(errs).length > 0) {
+                  toast.error(t("form.toastValidate"));
+                }
+              }}
               className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-l from-brand-500 to-brand-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-500/25 transition hover:brightness-110 disabled:opacity-60 dark:text-ink-950 sm:w-auto sm:px-10"
             >
               <i className="fa-solid fa-envelope-open-text" aria-hidden />

@@ -6,12 +6,13 @@ export const MEMBER_FILES = {
   batil: "/members/Batel.jpeg",
   walid: "/members/Walid.jpeg",
   mohamed: "/members/Mohamed.jpeg",
+  wafa: "/wafa.png",
 } as const;
 
 export const SECTION_IMAGES = [
   "/Section_Images/1.jpg",
   "/Section_Images/2.jpg",
-  "/Section_Images/3.webp",
+  "/Section_Images/Board_of_Trustees.jpg",
   "/Section_Images/4.jpg",
 ] as const;
 

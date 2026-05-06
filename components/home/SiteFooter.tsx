@@ -7,12 +7,42 @@ const DEV_LINKEDIN = "https://www.linkedin.com/in/ahmed-abdeldaiem-a26079227/";
 const DEV_GMAIL = "ahmadabdeldaiem18@gmail.com";
 
 const socialPlaceholders = [
-  { icon: "fa-brands fa-tiktok", label: "TikTok" },
-  { icon: "fa-brands fa-youtube", label: "YouTube" },
-  { icon: "fa-brands fa-facebook-f", label: "Facebook" },
-  { icon: "fa-brands fa-x-twitter", label: "X" },
-  { icon: "fa-brands fa-instagram", label: "Instagram" },
-  { icon: "fa-brands fa-linkedin-in", label: "LinkedIn" },
+  {
+    icon: "fa-brands fa-tiktok",
+    label: "TikTok",
+    hover:
+      "hover:bg-[#000000] hover:text-white hover:ring-[#25F4EE]/60 hover:shadow-[0_8px_22px_-8px_rgba(37,244,238,0.55)]",
+  },
+  {
+    icon: "fa-brands fa-youtube",
+    label: "YouTube",
+    hover:
+      "hover:bg-[#FF0000] hover:text-white hover:ring-[#FF0000]/40 hover:shadow-[0_8px_22px_-8px_rgba(255,0,0,0.55)]",
+  },
+  {
+    icon: "fa-brands fa-facebook-f",
+    label: "Facebook",
+    hover:
+      "hover:bg-[#1877F2] hover:text-white hover:ring-[#1877F2]/40 hover:shadow-[0_8px_22px_-8px_rgba(24,119,242,0.55)]",
+  },
+  {
+    icon: "fa-brands fa-x-twitter",
+    label: "X",
+    hover:
+      "hover:bg-black hover:text-white hover:ring-black/40 hover:shadow-[0_8px_22px_-8px_rgba(0,0,0,0.55)] dark:hover:bg-white dark:hover:text-black dark:hover:ring-white/40",
+  },
+  {
+    icon: "fa-brands fa-instagram",
+    label: "Instagram",
+    hover:
+      "hover:bg-gradient-to-tr hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF] hover:text-white hover:ring-[#DD2A7B]/40 hover:shadow-[0_8px_22px_-8px_rgba(221,42,123,0.6)]",
+  },
+  {
+    icon: "fa-brands fa-linkedin-in",
+    label: "LinkedIn",
+    hover:
+      "hover:bg-[#0A66C2] hover:text-white hover:ring-[#0A66C2]/40 hover:shadow-[0_8px_22px_-8px_rgba(10,102,194,0.55)]",
+  },
 ] as const;
 
 export function SiteFooter() {
@@ -83,9 +113,12 @@ export function SiteFooter() {
                   key={s.label}
                   role="listitem"
                   title={t("footer.socialSoon")}
-                  className="inline-flex h-9 w-9 cursor-default items-center justify-center rounded-full bg-slate-200/90 text-[0.8rem] text-slate-600 ring-1 ring-slate-300/60 dark:bg-white/10 dark:text-slate-300 dark:ring-white/10"
+                  className={`group inline-flex h-8 w-8 cursor-default items-center justify-center rounded-full bg-slate-200/90 text-[0.85rem] text-slate-600 ring-1 ring-slate-300/60 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-110 dark:bg-white/10 dark:text-slate-300 dark:ring-white/10 ${s.hover}`}
                 >
-                  <i className={s.icon} aria-hidden />
+                  <i
+                    className={`${s.icon} transition-transform duration-300 group-hover:scale-110`}
+                    aria-hidden
+                  />
                   <span className="sr-only">{s.label}</span>
                 </span>
               ))}

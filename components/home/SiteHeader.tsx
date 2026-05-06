@@ -45,7 +45,7 @@ export function SiteHeader() {
         ? pathname === "/"
         : pathname === href || pathname.startsWith(`${href}/`);
     return [
-      "whitespace-nowrap rounded-full px-2.5 py-2 text-[0.75rem] font-semibold transition-all xl:px-3 xl:text-sm",
+      "whitespace-nowrap rounded-full px-2.5 py-2 text-[0.75rem] font-semibold transition-all lg:text-[0.72rem] xl:px-3 xl:text-sm",
       active
         ? "bg-brand-600 text-white shadow-md shadow-brand-600/25 dark:bg-brand-500 dark:text-ink-950"
         : "text-slate-600 hover:bg-slate-100 hover:text-brand-700 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-brand-200",
@@ -58,10 +58,10 @@ export function SiteHeader() {
         ? pathname === "/"
         : pathname === href || pathname.startsWith(`${href}/`);
     return [
-      "block rounded-xl px-4 py-3.5 text-base font-semibold transition-colors",
+      "block rounded-xl px-4 py-3.5 text-base font-semibold transition-[color,background-color,transform] duration-200 ease-out active:scale-[0.99]",
       active
         ? "bg-brand-600 text-white dark:bg-brand-500 dark:text-ink-950"
-        : "text-slate-800 hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-white/10",
+        : "text-slate-900 hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-white/10",
     ].join(" ");
   };
 
@@ -114,7 +114,10 @@ export function SiteHeader() {
   );
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/90 bg-white/95 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-ink-950/95">
+    <header
+      className="fixed inset-x-0 top-0 z-[100] isolate border-b border-slate-200/90 bg-white shadow-md shadow-slate-900/10 ring-1 ring-slate-200/80 backdrop-blur-none dark:border-white/10 dark:bg-ink-950 dark:shadow-black/30 dark:ring-white/10 lg:bg-white/95 lg:shadow-sm lg:ring-0 lg:backdrop-blur-xl lg:dark:bg-ink-950/95"
+      style={{ WebkitBackfaceVisibility: "hidden" }}
+    >
       <div className="mx-auto flex h-[4.25rem] max-w-7xl items-center justify-between gap-3 px-4 sm:gap-4 sm:px-6 lg:px-8">
         {/* الشعار */}
         <Link
@@ -145,7 +148,7 @@ export function SiteHeader() {
 
         {/* روابط سطح المكتب — لا تلف، من xl فما فوق */}
         <nav
-          className="hidden min-w-0 xl:flex xl:flex-1 xl:justify-center xl:px-4 2xl:px-6"
+          className="hidden min-w-0 lg:flex lg:flex-1 lg:justify-center lg:px-3 xl:px-4 2xl:px-6"
           aria-label={t("nav.label")}
         >
           <ul className="flex flex-nowrap items-center justify-center gap-1">
@@ -163,16 +166,30 @@ export function SiteHeader() {
         <div className="flex shrink-0 items-center gap-2 sm:gap-2.5">
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200/90 bg-white text-slate-800 shadow-sm transition hover:bg-slate-50 xl:hidden dark:border-white/10 dark:bg-ink-900/90 dark:text-white dark:hover:bg-white/10"
+            className="group/menu-btn flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200/90 bg-white text-slate-800 shadow-sm transition-[transform,box-shadow,background-color,border-color] duration-200 ease-out hover:bg-slate-50 active:scale-[0.94] lg:hidden dark:border-white/10 dark:bg-ink-900/90 dark:text-white dark:hover:bg-white/10"
             onClick={() => setMenuOpen((o) => !o)}
             aria-expanded={menuOpen}
             aria-controls="mobile-nav-panel"
             aria-label={menuOpen ? t("nav.closeMenu") : t("nav.openMenu")}
           >
-            <i
-              className={`fa-solid ${menuOpen ? "fa-xmark" : "fa-bars"} text-lg`}
-              aria-hidden
-            />
+            {/* أيقونة برجر → X بانتقال سلس (بدون تبديل أيقونة فجّ) */}
+            <span className="relative block h-[14px] w-[18px]" aria-hidden>
+              <span
+                className={`absolute start-0 top-0 h-0.5 w-full rounded-full bg-current transition-[transform,top] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                  menuOpen ? "top-[6px] rotate-45" : "top-0 rotate-0"
+                }`}
+              />
+              <span
+                className={`absolute start-0 top-[6px] h-0.5 w-full rounded-full bg-current transition-[opacity,transform] duration-200 ease-out ${
+                  menuOpen ? "scale-x-0 opacity-0" : "scale-x-100 opacity-100"
+                }`}
+              />
+              <span
+                className={`absolute start-0 top-[12px] h-0.5 w-full rounded-full bg-current transition-[transform,top] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                  menuOpen ? "top-[6px] -rotate-45" : "top-[12px] rotate-0"
+                }`}
+              />
+            </span>
           </button>
           <div className="hidden sm:block">
             <Tools />
@@ -183,26 +200,37 @@ export function SiteHeader() {
         </div>
       </div>
 
-      {/* قائمة الجوال: لوحة كاملة العرض تحت الهيدر (بدون انزلاق أفقي — متوافقة مع RTL) */}
-      {menuOpen ? (
-        <button
-          type="button"
-          className="fixed inset-0 top-[4.25rem] z-40 bg-slate-950/45 backdrop-blur-[2px] xl:hidden"
-          onClick={() => setMenuOpen(false)}
-          aria-label={t("nav.closeMenu")}
-        />
-      ) : null}
+      {/* طبقة التعتيم — تبقى في DOM لانتقال opacity سلس عند الفتح/الإغلاق */}
+      <button
+        type="button"
+        className={`fixed inset-0 top-[4.25rem] z-[90] lg:hidden transition-opacity duration-300 ease-out ${
+          menuOpen
+            ? "bg-slate-950/50 opacity-100 backdrop-blur-sm"
+            : "pointer-events-none bg-slate-950/50 opacity-0 backdrop-blur-none"
+        }`}
+        onClick={() => setMenuOpen(false)}
+        aria-label={t("nav.closeMenu")}
+        aria-hidden={!menuOpen}
+        tabIndex={menuOpen ? 0 : -1}
+      />
+
+      {/* لوحة القائمة — max-height + opacity + translate لحركة انسيابية */}
       <div
         id="mobile-nav-panel"
-        className={`fixed inset-x-0 top-[4.25rem] z-50 overflow-hidden border-b transition-[max-height] duration-300 ease-out xl:hidden ${
+        inert={!menuOpen ? true : undefined}
+        className={`fixed inset-x-0 top-[4.25rem] z-[95] overflow-hidden border-b lg:hidden ${
           menuOpen
-            ? "max-h-[min(78vh,28rem)] border-slate-200/90 bg-white shadow-xl dark:border-white/10 dark:bg-ink-950"
-            : "pointer-events-none max-h-0 border-transparent"
+            ? "pointer-events-auto border-slate-200/90 bg-white shadow-2xl shadow-slate-900/15 ring-1 ring-slate-200/70 backdrop-blur-none dark:border-white/10 dark:bg-ink-950 dark:shadow-black/50 dark:ring-white/10"
+            : "pointer-events-none border-transparent bg-transparent shadow-none ring-0"
+        } transition-[max-height,opacity,transform,box-shadow,border-color,background-color,visibility] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          menuOpen
+            ? "visible max-h-[min(78vh,28rem)] translate-y-0 opacity-100"
+            : "invisible max-h-0 -translate-y-1 opacity-0"
         }`}
         aria-hidden={!menuOpen}
       >
         <nav
-          className="max-h-[min(72vh,26rem)] overflow-y-auto overscroll-contain p-4 sm:p-5"
+          className="relative z-[1] min-h-0 max-h-[min(72vh,26rem)] overflow-y-auto overscroll-contain p-4 sm:p-5"
           aria-label={t("nav.label")}
         >
           <ul className="flex flex-col gap-1">
@@ -219,12 +247,6 @@ export function SiteHeader() {
             ))}
           </ul>
         </nav>
-        <div className="border-t border-slate-200/80 p-4 dark:border-white/10 sm:hidden">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-            {t("lang.switch")}
-          </p>
-          <Tools />
-        </div>
       </div>
     </header>
   );

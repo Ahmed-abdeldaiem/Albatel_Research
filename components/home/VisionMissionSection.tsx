@@ -46,39 +46,46 @@ export function VisionMissionSection() {
           >
             <h2
               id="vision-heading"
-              className="text-sm font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400"
+              className="text-xs font-bold uppercase tracking-[0.25em] text-brand-600 dark:text-brand-400 sm:text-sm"
             >
               {t("vision.kicker")}
             </h2>
-            <p className="mt-3 text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl">
+            <p className="mt-3 text-balance text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-4xl">
               {t("vision.title")}
             </p>
-            <p className="mt-4 text-pretty text-slate-600 dark:text-slate-400">
+            <span className="mx-auto mt-4 block h-px w-16 bg-gradient-to-r from-transparent via-brand-500/60 to-transparent" />
+            <p className="mt-4 text-balance text-slate-600 dark:text-slate-400">
               {t("vision.intro")}
             </p>
           </div>
           <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {cards.map((card) => (
+            {cards.map((card, idx) => (
               <article
                 key={card.id}
-                className="group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-50/80 p-8 shadow-sm transition hover:border-brand-400/40 hover:shadow-md dark:border-white/10 dark:bg-ink-900/60 dark:shadow-none dark:hover:border-brand-500/30 dark:hover:shadow-lg dark:hover:shadow-brand-500/5 sm:p-10"
+                className="group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-50/80 p-8 shadow-sm transition duration-500 hover:-translate-y-1 hover:border-brand-400/40 hover:shadow-lg hover:shadow-brand-500/10 dark:border-white/10 dark:bg-ink-900/60 dark:shadow-none dark:hover:border-brand-500/30 dark:hover:shadow-lg dark:hover:shadow-brand-500/5 sm:p-10"
                 lang={locale === "en" ? "en" : "ar"}
+                data-aos="fade-up"
+                data-aos-delay={String(idx * 180)}
               >
                 <div
-                  className={`pointer-events-none absolute -left-20 -top-20 h-48 w-48 rounded-full bg-gradient-to-br ${card.accent} blur-2xl transition group-hover:opacity-100`}
+                  className={`pointer-events-none absolute -left-20 -top-20 h-48 w-48 rounded-full bg-gradient-to-br ${card.accent} blur-2xl transition duration-500 group-hover:scale-125`}
                   aria-hidden
                 />
                 <div className="relative">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-500/10 text-xl text-brand-600 ring-1 ring-slate-200/80 dark:bg-white/5 dark:text-brand-400 dark:ring-white/10">
+                  <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 text-2xl text-brand-600 ring-1 ring-brand-500/20 transition group-hover:scale-110 group-hover:ring-brand-500/40 dark:from-brand-400/20 dark:to-brand-400/5 dark:text-brand-300 dark:ring-brand-400/20 dark:group-hover:ring-brand-400/40">
                     <i className={`fa-solid ${card.icon}`} aria-hidden />
                   </span>
-                  <p className="mt-4 text-xs font-bold uppercase tracking-wider text-brand-600/90 dark:text-brand-300/80">
+                  <p className="mt-5 text-xs font-bold uppercase tracking-[0.2em] text-brand-600/90 dark:text-brand-300/80">
                     {card.kicker}
                   </p>
-                  <h3 className="mt-1 text-2xl font-bold text-slate-900 dark:text-white">
+                  <h3 className="mt-1 text-balance text-2xl font-bold text-slate-900 dark:text-white">
                     {card.title}
                   </h3>
-                  <p className="mt-4 leading-relaxed text-slate-600 dark:text-slate-400">
+                  <span className="mt-4 block h-px w-10 bg-gradient-to-r from-brand-500/60 to-transparent" />
+                  <p
+                    className="mt-4 text-justify leading-loose text-slate-600 dark:text-slate-400"
+                    style={{ textJustify: "inter-word" }}
+                  >
                     {card.body}
                   </p>
                 </div>
@@ -102,34 +109,44 @@ export function VisionMissionSection() {
             <div>
               <h2
                 id="goals-heading"
-                className="text-sm font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400"
+                className="text-xs font-bold uppercase tracking-[0.25em] text-brand-600 dark:text-brand-400 sm:text-sm"
               >
                 {t("goals.kicker")}
               </h2>
-              <p className="mt-3 max-w-xl text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl">
+              <p className="mt-3 max-w-xl text-balance text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-4xl">
                 {t("goals.title")}
               </p>
+              <span className="mt-4 block h-px w-12 bg-gradient-to-r from-brand-500/70 to-transparent" />
             </div>
-            <p className="max-w-md text-pretty text-slate-600 dark:text-slate-400">
+            <p className="max-w-md text-balance text-slate-600 dark:text-slate-400">
               {t("goals.intro")}
             </p>
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {goals.map((g) => (
+            {goals.map((g, idx) => (
               <article
                 key={g.title}
-                className="flex flex-col rounded-2xl border border-slate-200/80 bg-white/90 p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-brand-400/35 hover:shadow-md dark:border-white/10 dark:bg-ink-950/50 dark:shadow-none dark:hover:border-brand-500/25 dark:hover:bg-ink-900/80"
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white/90 p-6 shadow-sm transition duration-500 hover:-translate-y-1 hover:border-brand-400/40 hover:shadow-lg hover:shadow-brand-500/10 dark:border-white/10 dark:bg-ink-950/50 dark:shadow-none dark:hover:border-brand-500/30 dark:hover:bg-ink-900/80"
                 lang={locale === "en" ? "en" : "ar"}
+                data-aos="fade-up"
+                data-aos-delay={String(idx * 100)}
               >
-                <span className="text-2xl text-brand-600 dark:text-brand-400">
+                <span
+                  className="absolute end-3 top-3 select-none font-mono text-[0.65rem] font-bold tracking-widest text-slate-400/70 transition group-hover:text-brand-500/80 dark:text-slate-500/60 dark:group-hover:text-brand-300/90"
+                  aria-hidden
+                >
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500/15 to-brand-500/5 text-xl text-brand-600 ring-1 ring-brand-500/15 transition group-hover:scale-110 group-hover:ring-brand-500/40 dark:from-brand-400/15 dark:to-brand-400/5 dark:text-brand-300 dark:ring-brand-400/15 dark:group-hover:ring-brand-400/40">
                   <i className={`fa-solid ${g.icon}`} aria-hidden />
                 </span>
-                <h3 className="mt-4 text-lg font-bold text-slate-900 dark:text-white">
+                <h3 className="mt-4 text-balance text-lg font-bold text-slate-900 dark:text-white">
                   {g.title}
                 </h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-500">
+                <p className="mt-2 flex-1 text-balance text-sm leading-relaxed text-slate-600 dark:text-slate-500">
                   {g.desc}
                 </p>
+                <span className="mt-4 block h-0.5 w-0 bg-gradient-to-r from-brand-400 via-brand-500 to-cyan-400 transition-all duration-500 group-hover:w-full" />
               </article>
             ))}
           </div>

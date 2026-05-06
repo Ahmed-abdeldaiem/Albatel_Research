@@ -3,6 +3,7 @@ import { Cairo } from "next/font/google";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { AppProviders } from "@/contexts/AppProviders";
+import { SITE_URL } from "@/lib/site-url";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,7 +18,7 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.albatel-research.org"),
+  metadataBase: new URL(SITE_URL),
   applicationName: "مؤسسة باتل عبدالله الباتل للبحوث والدراسات",
   title: {
     default: "مؤسسة باتل عبدالله الباتل للبحوث والدراسات",
@@ -57,7 +58,7 @@ export const viewport: Viewport = {
   ],
 };
 
-const bootScript = `(function(){try{var t=localStorage.getItem("albatel-theme");if(t==="light")document.documentElement.classList.remove("dark");else document.documentElement.classList.add("dark");var l=localStorage.getItem("albatel-lang");if(l==="en"){document.documentElement.setAttribute("dir","ltr");document.documentElement.setAttribute("lang","en")}else{document.documentElement.setAttribute("dir","rtl");document.documentElement.setAttribute("lang","ar")}}catch(e){document.documentElement.classList.add("dark")}})();`;
+const bootScript = `(function(){try{var t=localStorage.getItem("albatel-theme");if(t==="dark")document.documentElement.classList.add("dark");else document.documentElement.classList.remove("dark");var l=localStorage.getItem("albatel-lang");if(l==="en"){document.documentElement.setAttribute("dir","ltr");document.documentElement.setAttribute("lang","en")}else{document.documentElement.setAttribute("dir","rtl");document.documentElement.setAttribute("lang","ar")}}catch(e){document.documentElement.classList.remove("dark")}})();`;
 
 export default function RootLayout({
   children,
