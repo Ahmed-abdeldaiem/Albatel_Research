@@ -71,7 +71,7 @@ export function HomeLanding() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_0%,rgba(14,165,233,0.12),transparent_55%)] dark:bg-[radial-gradient(ellipse_120%_80%_at_50%_0%,rgba(56,189,248,0.08),transparent_50%)]" />
         </div>
-        <div className="relative mx-auto flex min-h-[calc(100svh-4.25rem)] max-w-6xl flex-col justify-end px-4 pb-14 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pb-24">
+        <div className="relative mx-auto flex min-h-[calc(100svh-4.25rem)] max-w-6xl flex-col justify-center px-4 pb-16 pt-6 sm:justify-end sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pb-24">
           <div className="max-w-3xl text-start" data-aos="fade-up">
             <p
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold text-white/95 shadow-sm backdrop-blur-md sm:text-sm"
