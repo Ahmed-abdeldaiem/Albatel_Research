@@ -23,5 +23,5 @@ export const siteImages = {
   pageContact:
     "/Section_Images/contact_Hero.jpg",
   pagePublications:
-    "/Section_Images/publications.jfif",
+    "/esdatar.jpg",
 } as const;
