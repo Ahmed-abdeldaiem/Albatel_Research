@@ -43,6 +43,15 @@ function structurePairs(book: BookRecord): [string, string][] {
       ["pub.internal.t3t", "pub.internal.t3d"],
     ];
   }
+  if (book.slug === "corruption") {
+    return [
+      ["pub.corruption.c1t", "pub.corruption.c1d"],
+      ["pub.corruption.c2t", "pub.corruption.c2d"],
+      ["pub.corruption.c3t", "pub.corruption.c3d"],
+      ["pub.corruption.c4t", "pub.corruption.c4d"],
+      ["pub.corruption.c5t", "pub.corruption.c5d"],
+    ];
+  }
   return [];
 }
 
@@ -63,6 +72,15 @@ function audienceKeys(book: BookRecord): string[] {
       "pub.internal.ia3",
       "pub.internal.ia4",
       "pub.internal.ia5",
+    ];
+  }
+  if (book.slug === "corruption") {
+    return [
+      "pub.corruption.ca1",
+      "pub.corruption.ca2",
+      "pub.corruption.ca3",
+      "pub.corruption.ca4",
+      "pub.corruption.ca5",
     ];
   }
   return [];
@@ -212,6 +230,16 @@ export function BookDetail({ slug }: { slug: BookSlug }) {
                 {t("pub.internal.bylineOriginal")}
               </p>
             ) : null}
+            {book.slug === "corruption" ? (
+              <p
+                className="mt-2 rounded-lg border border-slate-200/90 bg-slate-50/90 px-3 py-2 text-xs leading-relaxed text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-400"
+                data-aos="fade-up"
+                data-aos-delay="220"
+              >
+                <i className="fa-solid fa-book me-2 text-brand-600 dark:text-brand-400" aria-hidden />
+                {t("pub.corruption.publisherNote")}
+              </p>
+            ) : null}
 
             {!isSoon ? (
               <p
@@ -247,18 +275,20 @@ export function BookDetail({ slug }: { slug: BookSlug }) {
                   <span>{t(`pub.${pk}.orderCta`)}</span>
                 </Link>
               ) : null}
-              <a
-                href={book.referenceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300/90 bg-white px-6 py-3 text-sm font-semibold text-slate-800 shadow-sm transition-all hover:border-brand-400/60 hover:bg-slate-50 dark:border-white/20 dark:bg-white/10 dark:text-white dark:hover:bg-white/15"
-              >
-                <span>{t(`pub.${pk}.externalDetails`)}</span>
-                <i
-                  className="fa-solid fa-arrow-up-right-from-square text-xs"
-                  aria-hidden
-                />
-              </a>
+              {book.slug !== "corruption" ? (
+                <a
+                  href={book.referenceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300/90 bg-white px-6 py-3 text-sm font-semibold text-slate-800 shadow-sm transition-all hover:border-brand-400/60 hover:bg-slate-50 dark:border-white/20 dark:bg-white/10 dark:text-white dark:hover:bg-white/15"
+                >
+                  <span>{t(`pub.${pk}.externalDetails`)}</span>
+                  <i
+                    className="fa-solid fa-arrow-up-right-from-square text-xs"
+                    aria-hidden
+                  />
+                </a>
+              ) : null}
             </div>
 
             {!isSoon ? (

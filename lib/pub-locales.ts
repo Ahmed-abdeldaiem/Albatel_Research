@@ -4,7 +4,7 @@ export const pubLocalesAr = {
     kicker: "إصدارات علمية",
     title: "من خبرة نخبة من المهنيين… إلى مكتبتكم",
     subtitle:
-      "مؤلفات وموسوعات من تأليف وتعريب فريق متخصص، تُثري المكتبة العربية في الاقتصاد الرياضي والرقابة الداخلية والامتثال — صدرت في مصر والمملكة العربية السعودية، مع التركيز على خدمة القارئ المصري عبر قنوات الطلب الرسمية.",
+      "مؤلفات وموسوعات من تأليف وتعريب فريق متخصص، تُثري المكتبة العربية في الاقتصاد الرياضي والرقابة الداخلية والامتثال وقضايا النزاهة والفساد في الرياضة — صدرت في مصر والمملكة العربية السعودية، مع التركيز على خدمة القارئ المصري عبر قنوات الطلب الرسمية.",
     chooseEdition: "اختر الإصدار",
     jarirDisclaimer:
       "تُعرض بعض الإصدارات في مكتبة جرير داخل المملكة العربية السعودية. موقع مؤسسة الباتل للبحوث والدراسات يخدم مصر والمحيط العربي — لا يتضمن شراءً مباشراً من جرير؛ للحصول على نسختكم في مصر أو للاستفسار استخدم نموذج الطلب أو البريد الرسمي.",
@@ -17,6 +17,7 @@ export const pubLocalesAr = {
     cardSoon: "قريباً",
     cardCta: "تفاصيل الإصدار",
     cardOrder: "طلب نسخة",
+    cardFoundation: "برعاية المؤسسة",
     labelsPublished: "منشور في مصر والمملكة",
 
     // ───── بيان المنهجية ─────
@@ -81,7 +82,7 @@ export const pubLocalesAr = {
     subtitle: "موسوعة بحثية مهنية في الاستثمار الرياضي",
     authors: "تأليف: باتل الباتل، محمد عرفة، ووليد منير",
     priceDisclaimer:
-      "الأسعار المرجعية على المواقع الشقيقة بالريال السعودي؛ للتسعير والتوفر في مصر أرسل طلباً عبر النموذج.",
+      "السعر داخل جمهورية مصر العربية: ٢٣٥٠ جنيه مصري للنسخة الواحدة — يُؤكَّد السعر وخيارات الشحن أو الاستلام عبر نموذج الطلب أو البريد الرسمي.",
     aboutTitle: "عن الكتاب",
     aboutBody:
       "موسوعة علمية متكاملة تتناول الاستثمار الرياضي بوجه عام، وكرة القدم بوجه خاص، من منظور مهني وتطبيقي وبحثي. تقدّم نماذج اقتصادية مقارنة لأندية عربية وأوروبية، وتضع المكتبة العربية أمام مرجع أصيل في حقل بدأ يتشكّل عالمياً.",
@@ -124,7 +125,7 @@ export const pubLocalesAr = {
     authors: "تأليف: Lynford Graham — تعريب: باتل الباتل، محمد عرفة، وليد منير",
     bylineOriginal: "المرجع الأصلي لأستاذ لينفورد غراهام",
     priceDisclaimer:
-      "للاستفسار عن السعر والطبعة داخل مصر استخدم نموذج الطلب؛ الأسعار المرجعية بالريال السعودي تخص القنوات داخل المملكة.",
+      "السعر داخل جمهورية مصر العربية: ١٦٥٠ جنيه مصري للنسخة الواحدة — يُؤكَّد السعر وخيارات الشحن أو الاستلام عبر نموذج الطلب أو البريد الرسمي.",
     aboutTitle: "عن الكتاب",
     aboutBody:
       "تعريب علمي دقيق لكتاب البروفيسور Lynford Graham، أنجزه فريق من الخبراء المهنيين بقيادة الأستاذ باتل الباتل، بمشاركة محمد عرفة وليد منير. يغطي منهجيات التوثيق والاختبار في بيئة الرقابة الداخلية وتطبيقات إطار COSO المحدّث، ويُعد مرجعاً أساسياً للمدققين والمحاسبين وطلاب الدراسات العليا.",
@@ -155,14 +156,47 @@ export const pubLocalesAr = {
     partnerPharos: "بالتعاون مع دار فاروس للنشر والتوزيع",
   },
   corruption: {
-    badge: "قريباً",
-    title: "الفساد",
-    subtitle: "إصدار قادم",
-    teaser: "إصدار مهني جديد",
-    authors: "فريق المؤسسة — يُعلَن عن المؤلفين لاحقاً",
+    badge: "إصدار المؤسسة",
+    title: "الفساد والاحتيال في الرياضة",
+    subtitle: "ثمانية عشر فصلاً بين النظرية والتطبيق والرقابة والحوكمة",
+    authors: "تأليف: باتل الباتل، محمد عرفة، ووليد منير",
+    publisherNote: "دار النشر: دار فاروس للنشر والتوزيع",
+    priceDisclaimer:
+      "السعر داخل جمهورية مصر العربية: ١٤٠٠ جنيه مصري للنسخة الواحدة — يُؤكَّد السعر وخيارات الشحن أو الاستلام عبر نموذج الطلب أو البريد الرسمي.",
+    aboutTitle: "عن الكتاب",
+    aboutBody:
+      "يمثل هذا الإصدار مرجعاً عربياً متكاملاً حول الفساد والاحتيال في قطاع الرياضة، ينطلق من تشخيص التحول الاقتصادي والسياسي والإعلامي للقطاع ثم يوسّع في المفاهيم والأدلة والأدوات القانونية والرقابية للمواجهة. يجمع بين العمق النظري والوقائع التاريخية ودراسات الحالة، في مسار منطقي يخدم الباحث وصانع القرار والمهتم بالنزاهة الرياضية.",
+    structureTitle: "محاور الكتاب",
+    c1t: "الموضوع والدافع",
+    c1d:
+      "يأتي الكتاب لسد فجوة معرفية في المكتبة العربية: غياب مرجع علمي شامل باللغة العربية يعالج قضيتي الفساد والاحتيال في الرياضة. ويوضح كيف تحوّلت الرياضة من منافسة ترفيهية إلى صناعة ضخمة تتدخل فيها أبعاد اقتصادية وسياسية وإعلامية، وزاد فيها تدفق الأموال عبر حقوق البث والرعايات والمراهنات، فظهرت صور متعددة من الفساد أثرت سلباً على نزاهة الرياضة ومصداقيتها.",
+    c2t: "المفهوم والأبعاد",
+    c2d:
+      "يؤكد الكتاب أن الفساد الرياضي لم يعد يقتصر على سلوكيات فردية معزولة، بل أصبح ظاهرة معقدة تشترك فيها شبكات ومؤسسات. ويتناول تلاعب النتائج، والرشوة واستغلال النفوذ والسلطة، والفساد في المناقصات والعقود وتوظيف الأحداث الكبرى لمصالح خاصة، وارتباط الرياضة بجرائم مالية خطيرة مثل غسيل الأموال، مع بيان أن الدوافع ليست مالية فقط بل إدارية وثقافات تنظيمية تسمح بالانتشار أو التغاضي.",
+    c3t: "المنهجية والمحتوى",
+    c3d:
+      "يتكوّن من ثمانية عشر فصلاً رُتبت بشكل منطقي ومتسلسل، ويجمع بين الجوانب النظرية والمفاهيمية والجانب التطبيقي والقانوني والرقابي. يناقش الفساد في رياضات شائعة مثل كرة القدم وما يرتبط بها من شبهات حول كأس العالم والاستضافة، وسباقات الخيل والمراهنات المالية. ويستعرض أدلة تاريخية على أن التلاعب ليس وليد العصر الحديث، مستعيناً في الفصل الخامس بترجمة واقتباس فصل مهم من كتاب البروفيسور راي فامبلو حول اقتصاديات التلاعب بالرياضة، مع التركيز على دراسات حالة واقعية توضح المخالفات والأطراف والنتائج والأبعاد الإنسانية والأخلاقية.",
+    c4t: "المواجهة والمعالجة",
+    c4d:
+      "يفرد مساحة لآليات كشف الفساد والإبلاغ عنه، وتنظيم ومعاقبة الفساد في المنافسات، وتعزيز الحوكمة الرشيدة داخل المؤسسات الرياضية، والأطر القانونية لحماية القطاع — بما في ذلك تحليل قانون ماكولين في مكافحة التلاعب الرياضي.",
+    c5t: "الرعاية والهدف",
+    c5d:
+      "صدر برعاية رسمية وحصرية من مؤسسة باتل عبدالله الباتل للبحوث والدراسات (برئاسة الأستاذ باتل عبدالله الباتل) ضمن مبادراتها لدعم الإنتاج العلمي وسد الفجوات المعرفية في العالم العربي. والهدف النهائي رفع الوعي بأهمية حماية الرياضة من العبث والاستغلال، وترسيخ مفاهيم النزاهة والحوكمة كأدوات أساسية لقطاع رياضي عادل ومستدام يحتكم إلى الشرف والعدالة وتكافؤ الفرص.",
+    audienceTitle: "لمن هذا الكتاب؟",
+    ca1: "صناع القرار في الاتحادات والأندية والهيئات الرياضية",
+    ca2: "الباحثون والأكاديميون في الإدارة والقانون والاقتصاد الرياضي",
+    ca3: "مسؤولو الحوكمة والامتثال ومكافحة الفساد في المؤسسات",
+    ca4: "الإعلام الرياضي والمهتمون بالشفافية والرقابة",
+    ca5: "الجامعات والمكتبات المتخصصة في الدراسات الرياضية والقانونية",
+    quote:
+      "«حماية الرياضة من العبث ليست رفاهية — بل شرط لمصداقية الصناعة وكرامة المنافسة.»",
+    quoteCitation: "— فريق المؤلفين",
+    orderCta: "اطلب عبر البريد الرسمي",
+    partnerPharos:
+      "صادر برعاية رسمية من مؤسسة باتل عبدالله الباتل للبحوث والدراسات — دعم الإنتاج العلمي وسد الفجوات المعرفية في الوطن العربي.",
+    regionLabel: "متاح للطلب داخل مصر عبر المؤسسة",
+    /** يُحتفَظ به إن عُيد وضع الإصدار «قريباً» */
     body: "يُعلَن عن تفاصيل هذا الإصدار قريباً بإذن الله — ترقبوا المحتوى العلمي والفصول والمؤلفين على هذه الصفحة وعبر قنوات المؤسسة الرسمية.",
-    externalDetails: "تصفح إصدارات الشريك المهني (مرجع)",
-    orderCta: "تواصل معنا لاحقاً",
   },
   order: {
     title: "طلب إصدار أو استفسار",
@@ -201,7 +235,7 @@ export const pubLocalesEn = {
     kicker: "Scholarly publications",
     title: "From seasoned professionals… to your library",
     subtitle:
-      "Books and encyclopaedias authored and professionally adapted by our team, enriching the Arabic library in sports economics and internal audit — published in Egypt and Saudi Arabia, with Egyptian readers served through official ordering channels.",
+      "Books and encyclopaedias authored and professionally adapted by our team, enriching the Arabic library in sports economics, internal audit and compliance, and integrity issues including corruption in sport — published in Egypt and Saudi Arabia, with Egyptian readers served through official ordering channels.",
     chooseEdition: "Choose a title",
     jarirDisclaimer:
       "Some titles are stocked at Jarir Bookstore in Saudi Arabia. This foundation website primarily serves Egypt and the wider Arab region — it does not process Jarir purchases; for copies in Egypt or inquiries, use the order form or our official email.",
@@ -214,6 +248,7 @@ export const pubLocalesEn = {
     cardSoon: "Coming soon",
     cardCta: "View title",
     cardOrder: "Request a copy",
+    cardFoundation: "Foundation release",
     labelsPublished: "Published in Egypt & Saudi Arabia",
 
     manifestoKicker: "Our publishing philosophy",
@@ -273,7 +308,7 @@ export const pubLocalesEn = {
     subtitle: "A professional research encyclopaedia on sports investment",
     authors: "By Batil Al-Batil, Mohamed Arafa, and Walid Munir",
     priceDisclaimer:
-      "Reference prices on partner sites may be listed in SAR; for Egyptian pricing and availability, submit a request via the form.",
+      "Price in Egypt: EGP 2,350 per copy — confirm totals, shipping or pickup via the order form or official email.",
     aboutTitle: "About the book",
     aboutBody:
       "A comprehensive scholarly work on sports investment broadly and football in particular, combining professional, applied, and research perspectives. It presents comparative economic models for Arab and European clubs and offers the Arabic library an original reference in a fast-emerging global field.",
@@ -316,7 +351,7 @@ export const pubLocalesEn = {
     authors: "By Lynford Graham — Adapted by Batil Al-Batil, Mohamed Arafa, and Walid Munir",
     bylineOriginal: "Original work by Professor Lynford Graham",
     priceDisclaimer:
-      "For pricing and editions inside Egypt, use the order form; SAR reference prices apply to channels in the Kingdom.",
+      "Price in Egypt: EGP 1,650 per copy — confirm totals, shipping or pickup via the order form or official email.",
     aboutTitle: "About the book",
     aboutBody:
       "A precise scholarly adaptation of Professor Lynford Graham’s landmark work, produced by a senior professional team led by Batil Al-Batil with Mohamed Arafa and Walid Munir. It covers documentation and testing methodologies in internal audit settings and applications of the updated COSO framework — an essential reference for auditors, accountants, and graduate students.",
@@ -347,14 +382,46 @@ export const pubLocalesEn = {
     partnerPharos: "In cooperation with Pharos Publishing & Distribution",
   },
   corruption: {
-    badge: "Coming soon",
-    title: "Corruption",
-    subtitle: "Upcoming release",
-    teaser: "A new professional title",
-    authors: "Foundation team — contributors to be announced",
-    body: "Full details, chapters, and contributors will be announced soon — watch this page and the foundation’s official channels.",
-    externalDetails: "Browse partner publications (reference)",
-    orderCta: "Contact us later",
+    badge: "Foundation title",
+    title: "Corruption and Fraud in Sport",
+    subtitle: "Eighteen chapters bridging theory, practice, oversight, and governance",
+    authors: "By Batil Al-Batil, Mohamed Arafa, and Walid Munir",
+    publisherNote: "Publisher: Pharos Publishing & Distribution.",
+    priceDisclaimer:
+      "Price in Egypt: EGP 1,400 per copy — final confirmation, shipping or pickup options via the order form or official email.",
+    aboutTitle: "About the book",
+    aboutBody:
+      "This work is a comprehensive Arabic reference on corruption and fraud in sport. It starts from the economic, political, and media transformation of the sector, then expands into concepts, evidence, and legal and supervisory tools for response. It combines theoretical depth, historical perspective, and case studies in a logical path for researchers, decision-makers, and everyone concerned with sporting integrity.",
+    structureTitle: "Main themes",
+    c1t: "Topic and motivation",
+    c1d:
+      "The book fills a critical gap in the Arabic library: the lack of a thorough scientific reference in Arabic on corruption and fraud in sport. It explains how sport moved from recreational competition to a major industry shaped by economic, political, and media forces, with growing money flows from broadcasting rights, sponsorship, and betting — and how that expansion produced diverse forms of corruption that undermined integrity and credibility.",
+    c2t: "Concept and dimensions",
+    c2d:
+      "Sporting corruption is no longer only isolated individual behaviour; it is a complex phenomenon involving networks and institutions. The book covers match-fixing, bribery and abuse of influence, corruption in tenders and contracts, using mega-events for private gain, links to serious financial crime such as money laundering, and non-financial drivers including administrative incentives and organisational cultures that enable or tolerate wrongdoing.",
+    c3t: "Methodology and content",
+    c3d:
+      "Eighteen logically ordered chapters combine conceptual theory, applied practice, and legal and supervisory angles. It discusses popular sports such as football and related controversies around the World Cup and hosting, horse racing, and financial betting. It traces historical evidence that manipulation is not only modern, and Chapter Five draws on a translated excerpt from Professor Ray Fisman’s work on the economics of sporting manipulation. Real case studies show violations, actors, outcomes, and human and ethical dimensions.",
+    c4t: "Response and remedies",
+    c4d:
+      "Dedicated space is given to detection and whistleblowing, regulating and sanctioning corruption in competition, strengthening good governance inside sport organisations, and legal frameworks to protect the sector — including analysis of the Macolin Convention against the manipulation of sports competitions.",
+    c5t: "Sponsorship and purpose",
+    c5d:
+      "Published under the official, exclusive sponsorship of the Batil Abdullah Al-Batil Foundation for Research and Studies (chaired by Mr Batil Abdullah Al-Batil), within its initiatives to support scholarly output and close knowledge gaps in the Arab world. The ultimate goal is to raise awareness of protecting sport from abuse, and to anchor integrity and governance as foundations for a fair, sustainable sporting environment built on honour, justice, and equal opportunity.",
+    audienceTitle: "Who is this book for?",
+    ca1: "Decision-makers in federations, clubs, and sports bodies",
+    ca2: "Researchers and academics in management, law, and sports economics",
+    ca3: "Governance, compliance, and anti-corruption professionals",
+    ca4: "Sports media and those focused on transparency and oversight",
+    ca5: "Universities and libraries specialising in sport and legal studies",
+    quote:
+      "“Protecting sport from manipulation is not optional — it is a condition for the industry’s credibility and the dignity of competition.”",
+    quoteCitation: "— The authors’ team",
+    orderCta: "Order via official email",
+    partnerPharos:
+      "Published under the official sponsorship of the Batil Abdullah Al-Batil Foundation for Research and Studies — supporting scholarly production and closing knowledge gaps in the Arab region.",
+    regionLabel: "Available to order in Egypt via the foundation",
+    body: "Full details will be announced soon — follow this page and the foundation’s official channels.",
   },
   order: {
     title: "Book request or inquiry",

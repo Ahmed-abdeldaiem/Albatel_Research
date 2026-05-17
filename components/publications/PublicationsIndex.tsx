@@ -8,6 +8,7 @@ import { PublicAssetImage } from "./PublicAssetImage";
 function badgeKey(book: BookRecord): string {
   if (book.status === "coming_soon") return "pub.index.cardSoon";
   if (book.slug === "football-economics") return "pub.index.cardBestseller";
+  if (book.slug === "corruption") return "pub.index.cardFoundation";
   return "pub.index.cardTranslation";
 }
 
@@ -73,7 +74,9 @@ export function PublicationsIndex() {
                 <div className="flex flex-1 flex-col gap-4 p-6">
                   {book.status === "published" ? (
                     <p className="text-xs font-semibold uppercase tracking-wide text-brand-600 dark:text-brand-400">
-                      {t("pub.index.labelsPublished")}
+                      {book.slug === "corruption"
+                        ? t("pub.corruption.regionLabel")
+                        : t("pub.index.labelsPublished")}
                     </p>
                   ) : null}
                   <div className="mt-auto flex flex-wrap gap-3">

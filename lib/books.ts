@@ -1,5 +1,6 @@
 import type { Locale } from "@/lib/i18n";
 import { boardMembers } from "@/lib/board";
+import { SITE_URL } from "@/lib/site-url";
 import {
   BOOK_COVER_CORRUPTION,
   BOOK_COVER_FOOTBALL,
@@ -64,10 +65,11 @@ export const BOOKS: BookRecord[] = [
   {
     slug: "corruption",
     cover: BOOK_COVER_CORRUPTION,
-    status: "coming_soon",
+    status: "published",
     i18nKey: "corruption",
-    referenceUrl: "https://www.albatelcpa.com/publications",
+    referenceUrl: SITE_URL,
     authorKeys: ["batil", "mohamed", "walid"],
+    /** لا يُعرض في جرير — التوزيع عبر المؤسسة في مصر */
     galleries: { cairo: [], riyadh: [], jarir: [] },
   },
 ];

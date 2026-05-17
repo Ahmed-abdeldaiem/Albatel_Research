@@ -1,3 +1,5 @@
+import { ORG_PHONE_DISPLAY, ORG_WHATSAPP_URL } from "@/lib/org-contact";
+
 export type ContactItem = {
   label: string;
   value: string;
@@ -23,9 +25,10 @@ export function buildContactItems(t: (key: string) => string): ContactItem[] {
     },
     {
       label: t("contact.phone"),
-      value: "+20 111 117 4241",
-      href: "tel:+201111174241",
+      value: ORG_PHONE_DISPLAY,
+      href: ORG_WHATSAPP_URL,
       icon: "fa-phone",
+      external: true,
     },
     {
       label: t("contact.address"),

@@ -536,7 +536,9 @@ const ar = {
   },
   footer: {
     org: "مؤسسة باتل عبدالله الباتل للبحوث والدراسات",
-    country: "جمهورية مصر العربية — الإسكندرية",
+    country: "مصر — الإسكندرية",
+    whatsappAria: "فتح واتساب على هذا الرقم",
+    whatsappFloat: "تواصل معنا عبر واتساب",
     rights: "جميع الحقوق محفوظة.",
     followUs: "تابعنا على",
     rightsLine:
@@ -1089,7 +1091,9 @@ const en = {
   },
   footer: {
     org: "Batel Abdullah Al-Batel Foundation for Research and Studies",
-    country: "Arab Republic of Egypt — Alexandria",
+    country: "Egypt — Alexandria",
+    whatsappAria: "Open WhatsApp for this number",
+    whatsappFloat: "Contact us on WhatsApp",
     rights: "All rights reserved.",
     followUs: "Follow us on",
     rightsLine:
