@@ -15,9 +15,9 @@ const DEV_GMAIL = "ahmadabdeldaiem18@gmail.com";
 const SOCIAL_MEDIA_URLS = {
   tiktok: "https://www.tiktok.com/@albatel_research",
   youtube: "https://www.youtube.com/@AlbatelResearch",
-  facebook: "https://www.facebook.com/albatelreasearch",
+  facebook: "https://www.facebook.com/albatelresearch",
   x: "https://x.com/AlbatelResearch",
-  instagram: "https://www.instagram.com/albatelreasearch/",
+  instagram: "https://www.instagram.com/albatelresearch/",
   linkedin: "https://www.linkedin.com/company/albatel-research",
 } as const;
 
