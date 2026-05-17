@@ -217,6 +217,8 @@ export const pubLocalesAr = {
     hint: "يُرسل الطلب من الموقع إلى بريد المؤسسة؛ يمكنكم الرد على بريدكم لاستكمال التنسيق.",
     toastOk: "تم إرسال طلبك إلى المؤسسة بنجاح.",
     toastErr: "تعذّر إرسال الطلب. حاول مرة أخرى لاحقاً.",
+    toastRateLimit:
+      "تم تجاوز حدّ الإرسال المسموح. يرجى الانتظار عشر دقائق تقريباً ثم المحاولة من جديد.",
     toastErrConfig:
       "خدمة البريد غير مهيأة على الخادم. يرجى التواصل مع مسؤول الموقع لتفعيل SMTP.",
     toastValidate: "يرجى مراجعة الحقول المطلوبة قبل الإرسال.",
@@ -442,6 +444,8 @@ export const pubLocalesEn = {
     hint: "The request is sent from the website; the foundation can reply to your email to follow up.",
     toastOk: "Your request was sent to the foundation successfully.",
     toastErr: "Could not send the request. Please try again later.",
+    toastRateLimit:
+      "Too many submissions. Please wait about ten minutes and try again.",
     toastErrConfig:
       "Mail is not configured on the server. Ask the site administrator to enable SMTP.",
     toastValidate: "Please review the required fields before sending.",

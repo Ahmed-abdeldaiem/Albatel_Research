@@ -385,6 +385,8 @@ const ar = {
     errPhoneInvalid: "يرجى إدخال رقم هاتف صالح",
     toastOk: "تم إرسال رسالتك إلى المؤسسة بنجاح.",
     toastErr: "تعذّر إرسال الرسالة. حاول مرة أخرى لاحقاً.",
+    toastRateLimit:
+      "تم تجاوز حدّ الإرسال المسموح من هذا الجهاز. يرجى الانتظار عشر دقائق تقريباً ثم المحاولة من جديد.",
     toastErrConfig:
       "خدمة البريد غير مهيأة على الخادم. يرجى التواصل مع مسؤول الموقع لتفعيل SMTP.",
     toastValidate: "يرجى مراجعة الحقول المطلوبة قبل الإرسال.",
@@ -940,6 +942,8 @@ const en = {
     errPhoneInvalid: "Please enter a valid phone number",
     toastOk: "Your message was sent to the foundation successfully.",
     toastErr: "Could not send the message. Please try again later.",
+    toastRateLimit:
+      "Too many submissions from this device. Please wait about ten minutes and try again.",
     toastErrConfig:
       "Mail is not configured on the server. Ask the site administrator to enable SMTP.",
     toastValidate: "Please review the required fields before sending.",

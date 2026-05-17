@@ -7,6 +7,7 @@ import { useEffect, useMemo, useState } from "react";
 import toast from "react-hot-toast";
 import * as Yup from "yup";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { MailHoneypotField } from "@/components/forms/MailHoneypotField";
 import { getBook, publishedBooks } from "@/lib/books";
 import {
   EGYPT_GOVERNORATES,
@@ -22,6 +23,7 @@ type FormValues = {
   copies: string;
   city: string;
   notes: string;
+  _hp: string;
 };
 
 function bookTitle(t: (k: string) => string, slug: string): string {
@@ -81,6 +83,7 @@ export function BookOrderForm() {
     copies: "1",
     city: "",
     notes: "",
+    _hp: "",
   };
 
   const pubList = publishedBooks();
@@ -118,10 +121,15 @@ export function BookOrderForm() {
                 copies: Number(values.copies),
                 city: values.city,
                 notes: values.notes,
+                _hp: values._hp,
               }),
             });
             if (res.status === 503) {
               toast.error(t("pub.order.toastErrConfig"));
+              return;
+            }
+            if (res.status === 429) {
+              toast.error(t("pub.order.toastRateLimit"));
               return;
             }
             if (!res.ok) {
@@ -138,7 +146,8 @@ export function BookOrderForm() {
         }}
       >
         {({ isSubmitting, validateForm }) => (
-          <Form className="mt-8 space-y-5">
+          <Form className="relative mt-8 space-y-5">
+            <MailHoneypotField />
             <div>
               <label
                 htmlFor="bookSlug"

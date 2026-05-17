@@ -5,6 +5,7 @@ import { useMemo } from "react";
 import toast from "react-hot-toast";
 import * as Yup from "yup";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { MailHoneypotField } from "@/components/forms/MailHoneypotField";
 import { isValidPhone, MIN_MESSAGE_LENGTH } from "@/lib/phone";
 
 type FormValues = {
@@ -13,6 +14,7 @@ type FormValues = {
   phone: string;
   subject: string;
   message: string;
+  _hp: string;
 };
 
 export function ContactForm() {
@@ -45,6 +47,7 @@ export function ContactForm() {
     phone: "",
     subject: "",
     message: "",
+    _hp: "",
   };
 
   return (
@@ -75,10 +78,15 @@ export function ContactForm() {
                 phone: values.phone,
                 subject: values.subject,
                 message: values.message,
+                _hp: values._hp,
               }),
             });
             if (res.status === 503) {
               toast.error(t("form.toastErrConfig"));
+              return;
+            }
+            if (res.status === 429) {
+              toast.error(t("form.toastRateLimit"));
               return;
             }
             if (!res.ok) {
@@ -95,7 +103,8 @@ export function ContactForm() {
         }}
       >
         {({ isSubmitting, validateForm }) => (
-          <Form className="mt-8 space-y-5" lang={locale === "en" ? "en" : "ar"}>
+          <Form className="relative mt-8 space-y-5" lang={locale === "en" ? "en" : "ar"}>
+            <MailHoneypotField />
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
                 <label

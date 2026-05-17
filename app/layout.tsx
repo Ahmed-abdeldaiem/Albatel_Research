@@ -44,10 +44,19 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ar_EG",
+    url: SITE_URL,
     siteName: "مؤسسة باتل عبدالله الباتل للبحوث والدراسات",
     title: "مؤسسة باتل عبدالله الباتل للبحوث والدراسات",
     description:
       "بحوث، تطوير، وترجمة متخصصة لخدمة المجتمع المهني في مصر والعالم العربي.",
+    images: [{ url: "/Logo_trans.png", alt: "مؤسسة باتل عبدالله الباتل للبحوث والدراسات" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "مؤسسة باتل عبدالله الباتل للبحوث والدراسات",
+    description:
+      "بحوث، تطوير، وترجمة متخصصة لخدمة المجتمع المهني في مصر والعالم العربي.",
+    images: ["/Logo_trans.png"],
   },
 };
 

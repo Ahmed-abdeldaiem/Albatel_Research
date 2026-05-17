@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { BOOK_SLUGS } from "@/lib/books";
+import { assertMailSubmissionAllowed } from "@/lib/mail-api-guard";
 import { OFFICIAL_EMAIL } from "@/lib/contact";
 import { EGYPT_GOVERNORATE_VALUES } from "@/lib/egypt-governorates";
 import { createMailTransport, getMailFrom } from "@/lib/mailer";
@@ -60,6 +61,9 @@ export async function POST(req: Request) {
   if (!body || typeof body !== "object") {
     return NextResponse.json({ error: "invalid_body" }, { status: 400 });
   }
+
+  const blocked = assertMailSubmissionAllowed(req, body as Record<string, unknown>);
+  if (blocked) return blocked;
 
   const transport = createMailTransport();
   if (!transport) {

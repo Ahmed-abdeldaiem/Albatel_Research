@@ -5,6 +5,7 @@ import { useMemo } from "react";
 import toast from "react-hot-toast";
 import * as Yup from "yup";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { MailHoneypotField } from "@/components/forms/MailHoneypotField";
 import { isValidPhone } from "@/lib/phone";
 
 // =============================================================================
@@ -48,6 +49,7 @@ type FormValues = {
   description: string;
   wordCount: string;
   attachmentUrl: string;
+  _hp: string;
 };
 
 export function TranslationRequestForm() {
@@ -124,6 +126,7 @@ export function TranslationRequestForm() {
     description: "",
     wordCount: "",
     attachmentUrl: "",
+    _hp: "",
   };
 
   // قائمة اللغات بترتيب ثابت — تُستخدم في القائمتين المنسدلتين
@@ -169,6 +172,10 @@ export function TranslationRequestForm() {
               toast.error(t("form.toastErrConfig"));
               return;
             }
+            if (res.status === 429) {
+              toast.error(t("form.toastRateLimit"));
+              return;
+            }
             if (!res.ok) {
               toast.error(t("translationPage.formError"));
               return;
@@ -183,7 +190,8 @@ export function TranslationRequestForm() {
         }}
       >
         {({ isSubmitting, validateForm, values, setFieldValue, errors, touched }) => (
-          <Form className="space-y-7" lang={locale === "en" ? "en" : "ar"}>
+          <Form className="relative space-y-7" lang={locale === "en" ? "en" : "ar"}>
+            <MailHoneypotField />
             {/* ─── Row 1: Name + Email ─── */}
             <div className="grid gap-5 sm:grid-cols-2">
               <FieldBlock name="name" label={t("form.name")} autoComplete="name" />

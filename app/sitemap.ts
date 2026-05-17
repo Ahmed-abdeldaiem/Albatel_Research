@@ -9,28 +9,28 @@ import { SITE_URL } from "@/lib/site-url";
  * - **صفحات ثابتة:** من `SITEMAP_STATIC_ENTRIES` في `lib/sitemap-static-paths.ts`
  * - **صفحات الكتب:** من `BOOKS` في `lib/books.ts` (ديناميكي عند إضافة إصدار)
  *
+ * **التحقق بعد الرفع:** افتح `https://<نطاقك>/sitemap.xml` و`robots.txt`،
+ * وأرسل الخريطة في Google Search Console.
+ *
  * @see https://nextjs.org/docs/app/api-reference/file-conventions/sitemap
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  const entries: MetadataRoute.Sitemap = SITEMAP_STATIC_ENTRIES.map(
-    ({ path, changeFrequency, priority }) => ({
-      url: path === "" ? SITE_URL : `${SITE_URL}${path}`,
-      lastModified,
-      changeFrequency,
-      priority,
-    }),
-  );
+  const staticEntries = SITEMAP_STATIC_ENTRIES.map(({ path, changeFrequency, priority }) => ({
+    url: path === "" ? SITE_URL : `${SITE_URL}${path}`,
+    lastModified,
+    changeFrequency,
+    priority,
+  }));
 
-  for (const book of BOOKS) {
-    entries.push({
-      url: `${SITE_URL}/publications/${book.slug}`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: book.status === "published" ? 0.82 : 0.55,
-    });
-  }
+  const bookEntries: MetadataRoute.Sitemap = BOOKS.map((book) => ({
+    url: `${SITE_URL}/publications/${book.slug}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: book.status === "published" ? 0.82 : 0.55,
+  }));
 
-  return entries;
+  /** الصفحة الرئيسية أولاً ثم الباقي ثم الكتب — ترتيب قراءة أوضح للبشر والأدوات */
+  return [...staticEntries, ...bookEntries];
 }

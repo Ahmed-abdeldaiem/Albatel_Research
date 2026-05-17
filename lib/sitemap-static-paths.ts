@@ -13,6 +13,10 @@ export type SitemapStaticEntry = {
 /**
  * صفحات ثابتة تُدرَج في `sitemap.xml`.
  *
+ * **تغطية المسارات (مراجعة مع `app/(site)/…/page.tsx`):**
+ * `/` · `/about` · `/board` · `/research-committee` · `/translation-committee`
+ * · `/publications` · `/publications/order` · `/contact`
+ *
  * **عند إضافة صفحة جديدة في `app/(site)/…`** أضف هنا سطرًا واحدًا بالمسار
  * (مثل `/news`) — لا حاجة لتعديل `app/sitemap.ts` نفسه.
  *
