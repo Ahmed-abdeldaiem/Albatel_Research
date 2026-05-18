@@ -121,19 +121,22 @@ export function SiteFooter() {
             <p className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-500">
               {t("footer.navQuick")}
             </p>
-            <nav
-              className="mt-4 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-x-5 sm:gap-y-2"
-              aria-label={t("nav.label")}
-            >
-              {links.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  className="text-sm font-semibold text-slate-700 transition hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-300"
-                >
-                  {l.label}
-                </Link>
-              ))}
+            <nav className="mt-4" aria-label={t("nav.label")}>
+              <ul className="flex list-none flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-y-2">
+                {links.map((l) => (
+                  <li
+                    key={l.href}
+                    className="sm:inline-flex sm:items-center sm:not-last:after:ms-2 sm:not-last:after:text-slate-300 sm:not-last:after:content-['·']"
+                  >
+                    <Link
+                      href={l.href}
+                      className="text-sm font-semibold text-slate-700 transition hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-300"
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </nav>
           </div>
 
