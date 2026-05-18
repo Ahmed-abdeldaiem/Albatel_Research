@@ -1,5 +1,5 @@
 import type { Locale } from "@/lib/i18n";
-import { MEMBER_FILES, MEMBER_PLACEHOLDER } from "@/lib/public-assets";
+import { MEMBER_FILES } from "@/lib/public-assets";
 
 // =============================================================================
 // نوع بيانات عضو مجلس الأمناء
