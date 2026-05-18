@@ -55,13 +55,30 @@ const arMembers: BoardMember[] = [
     ],
   },
 
-  // (2) نائب رئيس المجلس — لا توجد بيانات بعد
+  // (2) نائب رئيس مجلس الأمناء
   {
-    name: "د. عبدالله هلال",
+    name: "د. عبد الله عبد العظيم راغب هلال",
     role: "نائب رئيس مجلس الأمناء",
-    title: "السيرة الذاتية ستُضاف قريبًا",
-    image: MEMBER_PLACEHOLDER,
-    imagePlaceholder: true,
+    title: "أستاذ بقسم المحاسبة والمراجعة — كلية التجارة، جامعة الإسكندرية",
+    image: MEMBER_FILES.abdallah,
+    bio:
+      "أستاذ  بقسم المحاسبة والمراجعة بكلية التجارة، جامعة الإسكندرية. حاصل على الدكتوراه في المحاسبة من الجامعة ذاتها، وباحث وممارس في موضوعات القيمة المضافة والمحاسبة البيئية والمراجعة واعتماد الميزانيات. له خبرة واسعة في الاستشارات المالية والمحاسبية والتدريب مع جهات القطاع العام والخاص، بما في ذلك الشركات القابضة وقطاع البترول والبنوك التنموية، إلى جانب عضويات ولجان فنية وقيادات جمعيات مهنية.",
+    qualifications: [
+      "أستاذ بقسم المحاسبة والمراجعة — كلية التجارة، جامعة الإسكندرية",
+      "دكتوراه الفلسفة في المحاسبة (1997) — كلية التجارة، جامعة الإسكندرية: «تصميم مقياس للقيمة المضافة المعدلة بالآثار الجانبية الناتجة عن مزاولة الوحدة الاقتصادية لنشاطها في المجتمع»",
+      "ماجستير في المحاسبة (1991) — كلية التجارة، جامعة الإسكندرية: «مبدأ المقابلة وإمكانية تطبيقه في صناعة استكشاف وإنتاج البترول — دراسة تطبيقية»",
+      "بكالوريوس تجارة — شعبة محاسبة (دور مايو 1985) — بتقدير جيد جدًا",
+      "مزاولة مهنة المحاسبة والمراجعة، واعتماد ميزانيات شركات المساهمة، والمشاركة في إعداد دراسات جدوى المشروعات",
+      "تقديم الاستشارات المالية والمحاسبية — شركة أبو قير للأسمدة والصناعات الكيماوية",
+      "تقديم الاستشارات المالية والتدريبية — بنك التنمية والائتمان الزراعي",
+      "تقديم الاستشارات المالية والاقتصادية — مشروع مبارك القومي لشباب الخريجين",
+      "تقديم الاستشارات المالية والتحليل المالي للمحاسبين بشركات قطاع البترول",
+      "عضو لجان الشركة القابضة لفحص مشكلات الشركات التابعة",
+      "عضو الجمعية العامة — شركة المستودعات المصرية",
+      "رئيس مجلس إدارة جمعية المحاسبين والمدققين الداخليين",
+      "المستشار المالي — جامعة دمنهور",
+      "المستشار المالي السابق — الشركة القابضة للنقل البحري",
+    ],
   },
 
   // (3) أمين عام المؤسسة
@@ -163,11 +180,28 @@ const enMembers: BoardMember[] = [
     ],
   },
   {
-    name: "Dr. Abdullah Hilal",
+    name: "Dr. Abdallah Abd El-Azim Ragab Hilal",
     role: "Vice Chairman of the Board of Trustees",
-    title: "Biography to be added soon",
-    image: MEMBER_PLACEHOLDER,
-    imagePlaceholder: true,
+    title: "Professor Emeritus — Department of Accounting & Auditing, Faculty of Commerce, University of Alexandria",
+    image: MEMBER_FILES.abdallah,
+    bio:
+      "Professor Emeritus in the Department of Accounting & Auditing, Faculty of Commerce, University of Alexandria. He earned his Ph.D. in Accounting from the same university and works as a researcher and practitioner on value-added measurement, environmental accounting, audit, and financial statement attestation. He has extensive experience in financial and accounting advisory and training across the public and private sectors—including holding companies and the petroleum sector—as well as technical committees and leadership roles in professional associations.",
+    qualifications: [
+      "Professor Emeritus — Department of Accounting & Auditing, Faculty of Commerce, University of Alexandria",
+      "Ph.D. in Accounting (1997), Faculty of Commerce, University of Alexandria — thesis on designing a measure of value added adjusted for externalities arising from an economic unit’s activities in society",
+      "M.Sc. in Accounting (1991), Faculty of Commerce, University of Alexandria — thesis on the matching principle and its application in petroleum exploration and production (applied study)",
+      "B.Com., Accounting (May 1985) — Very Good",
+      "Professional practice in accounting and audit, attestation of joint-stock company financial statements, and participation in feasibility studies",
+      "Financial & accounting advisory — Abu Qir Fertilizers & Chemical Industries",
+      "Financial & training advisory — Agricultural Bank of Egypt (Development & Credit)",
+      "Financial & economic advisory — Mubarak National Graduates Project",
+      "Financial advisory and financial analysis for accountants in the petroleum sector",
+      "Member of holding-company committees examining issues at subsidiary companies",
+      "General Assembly member — Egyptian Warehousing Company",
+      "Chairman of the Board — Association of Accountants & Internal Auditors",
+      "Financial Consultant — Damanhour University",
+      "Former Financial Consultant — Holding Company for Maritime Transport",
+    ],
   },
   {
     name: "Mr. Walid Munir",

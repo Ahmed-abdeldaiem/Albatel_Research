@@ -4,6 +4,7 @@ export const MEMBER_PLACEHOLDER = "/Logo_trans.png";
 
 export const MEMBER_FILES = {
   batil: "/members/Batel.jpeg",
+  abdallah: "/drAbdallah.jpeg",
   walid: "/members/Walid.jpeg",
   mohamed: "/members/Mohamed.jpeg",
   wafa: "/wafa.png",

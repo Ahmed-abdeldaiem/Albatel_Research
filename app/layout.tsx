@@ -49,14 +49,22 @@ export const metadata: Metadata = {
     title: "مؤسسة باتل عبدالله الباتل للبحوث والدراسات",
     description:
       "بحوث، تطوير، وترجمة متخصصة لخدمة المجتمع المهني في مصر والعالم العربي.",
-    images: [{ url: "/Logo_trans.png", alt: "مؤسسة باتل عبدالله الباتل للبحوث والدراسات" }],
+    images: [
+      {
+        url: "/Logo.png",
+        width: 2318,
+        height: 2318,
+        alt: "مؤسسة باتل عبدالله الباتل للبحوث والدراسات",
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "مؤسسة باتل عبدالله الباتل للبحوث والدراسات",
     description:
       "بحوث، تطوير، وترجمة متخصصة لخدمة المجتمع المهني في مصر والعالم العربي.",
-    images: ["/Logo_trans.png"],
+    images: ["/Logo.png"],
   },
 };
 
