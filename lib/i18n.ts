@@ -416,7 +416,7 @@ const ar = {
     title: "من نحن",
     p1a: "مؤسسة باتل عبدالله الباتل للبحوث والدراسات",
     p1b:
-      "هي مؤسسة مصرية للبحوث والتطوير والترجمة، تعمل من قلب الإسكندرية، وتستهدف مجموعة من الأهداف الرئيسية التي تخدم المجتمع المهني والأكاديمي على حد سواء.",
+      "المشهرة برقم ٤٦٥٠ هي مؤسسة مصرية للبحوث والتطوير والترجمة، تعمل من قلب الإسكندرية، وتستهدف مجموعة من الأهداف الرئيسية التي تخدم المجتمع المهني والأكاديمي على حد سواء.",
     p2:
       "البحث العلمي عندنا ليس مجرد أرقام، بل رؤى تخدم المجتمع وتصنع القرار. نسعى لإثراء المشهد المهني والأكاديمي بإصدارات وبرامج تطوير في كافة التخصصات — خدمةً للمعرفة وللممارسين في جمهورية مصر العربية والمحيط العربي.",
     li1: "نصوغ المعرفة بمنهجية رصينة، فنقدم دراسات تطبيقية تدعم القرار في القطاعين العام والخاص.",
@@ -551,6 +551,8 @@ const ar = {
     devGmail: "بريد المطوّر",
     devLinkedIn: "حساب المطوّر على لينكد إن",
     navQuick: "روابط سريعة",
+    adNumberLabel: "رقم الإشهار",
+    adNumberAria: "رمز QR لرقم إشهار المؤسسة 4650",
   },
   pub: pubLocalesAr,
   brand: {
@@ -973,7 +975,7 @@ const en = {
     title: "Who we are",
     p1a: "The Batel Abdullah Al-Batel Foundation for Research and Studies",
     p1b:
-      "is an Egyptian institution for research, development, and translation, based in Alexandria, pursuing key objectives that serve both professional and academic communities.",
+      "Registered under number 4650, is an Egyptian institution for research, development, and translation, based in Alexandria, pursuing key objectives that serve both professional and academic communities.",
     p2:
       "Our science is not mere figures — it is insight that serves society and shapes decisions. We seek to enrich the professional and academic landscape with publications and development programmes across all disciplines — in service of knowledge and practitioners in Egypt and the wider Arab region.",
     li1: "We craft knowledge with rigorous methodology, delivering applied studies that support decisions in public and private sectors.",
@@ -1108,6 +1110,8 @@ const en = {
     devGmail: "Developer email",
     devLinkedIn: "Developer on LinkedIn",
     navQuick: "Quick links",
+    adNumberLabel: "Advertisement No.",
+    adNumberAria: "QR code for foundation advertisement number 4650",
   },
   pub: pubLocalesEn,
   brand: {

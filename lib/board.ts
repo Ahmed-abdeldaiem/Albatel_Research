@@ -85,10 +85,10 @@ const arMembers: BoardMember[] = [
   {
     name: "أ. وليد منير",
     role: "أمين عام المؤسسة",
-    title: "خبير الضرائب وتسعير المعاملات — ماجستير في المالية العامة والضرائب",
+    title: "خبير الضرائب الدولية وتسعير المعاملات — دبلومة دراسات عليا في الضرائب، وتمهيدي ماجستير في الاقتصاد",
     image: MEMBER_FILES.walid,
     bio:
-      "خبير في الضرائب وتسعير المعاملات (Transfer Pricing)، ومدير التدريب والتطوير بمركز بتيل الإتقان للتدريب. حاصل على الماجستير في المالية العامة والضرائب، ويشغل عضوية ومناصب قيادية في كبرى الجمعيات المهنية المحلية والدولية في مجالات المحاسبة والمراجعة والضرائب.",
+      "خبير في الضرائب الدولية وتسعير المعاملات (Transfer Pricing)، دبلومة دراسات عليا في الضرائب، وتمهيدي ماجستير في الاقتصاد، ومدير التدريب والتطوير بمركز بتيل الإتقان للتدريب، ويشغل عضوية ومناصب قيادية في كبرى الجمعيات المهنية وهو أمين عام جمعية المحاسبين والمدققين الداخليين، وله اسهامات في العديد من المؤلفات والمترجمات الدولية.",
     qualifications: [
       "شريك الضرائب ورئيس قسم تسعير المعاملات (Transfer Pricing) — UHY",
       "ماجستير في المالية العامة والضرائب",
@@ -111,10 +111,10 @@ const arMembers: BoardMember[] = [
     title: "محاسب قانوني ومراجع معتمد — Certified IPSASB",
     image: MEMBER_FILES.mohamed,
     bio:
-      "خبير مهني في المراجعة والامتثال، وخبير في التدريب المهني وتطوير الكفاءات في مجالَي المحاسبة والمراجعة، ومدير التشغيل والعمليات بمركز بتيل الإتقان للتدريب. يحمل عضويات في كبرى الجمعيات المهنية المحلية والعربية، وله إسهامات في البحث والتطوير والتدريب المهني المعتمد دوليًا.",
+      "خبير مهني في المراجعة والامتثال، وخبير في التدريب المهني وتطوير الكفاءات في مجالَي المحاسبة والمراجعة، ومدير التشغيل والعمليات بمركز بتيل الإتقان للتدريب. يحمل عضويات في كبرى الجمعيات المهنية المحلية والعربية، وله إسهامات في البحث والتطوير والتدريب المهني المعتمد دوليًا، وله اسهامات في العديد من المؤلفات والمترجمات الدولية.",
     qualifications: [
       "شريك المراجعة في UHY العالمية",
-      "عضو جمعية المحاسبين القانونيين",
+      "زميل جمعية المحاسبين القانونيين",
       "عضو اتحاد المحاسبين والمراجعين العرب",
       "حاصل على شهادة المعايير الدولية للقطاع العام (IPSAS) من ACCA",
       "أمين صندوق جمعية المحاسبين والمدققين الداخليين (AAIA)",
@@ -206,10 +206,10 @@ const enMembers: BoardMember[] = [
   {
     name: "Mr. Walid Munir",
     role: "Secretary General of the Foundation",
-    title: "Tax & Transfer Pricing Expert — M.Sc. in Public Finance & Taxation",
+    title: "International Tax & Transfer Pricing Expert - Postgraduate Diploma in Taxation and Pre-Master's Degree in Economics",
     image: MEMBER_FILES.walid,
     bio:
-      "An expert in taxation and Transfer Pricing, and Director of Training & Development at Batel Al-Itqan Training Center. He holds a Master's degree in Public Finance and Taxation, and serves on leading professional associations across accounting, audit, and taxation locally and internationally.",
+      "An expert in international taxation and transfer pricing, holding a postgraduate diploma in taxation and a pre-Master's degree in economics, he is the Training and Development Manager at Bateel Al Itqan Training Center. He is a member and holds leadership positions in major professional associations and is the Secretary General of the Association of Accountants and Internal Auditors. He has contributed to numerous international publications and translations.",
     qualifications: [
       "Tax Partner & Head of Transfer Pricing — UHY",
       "M.Sc. in Public Finance & Taxation",
@@ -230,10 +230,10 @@ const enMembers: BoardMember[] = [
     title: "Certified Public Accountant & Auditor — Certified IPSASB",
     image: MEMBER_FILES.mohamed,
     bio:
-      "A professional expert in audit and compliance, specialized in professional training and competency development in accounting and audit, and Director of Operations at Batel Al-Itqan Training Center. He holds memberships across major local and Arab professional associations, with contributions to research, development, and internationally accredited professional training.",
+      "A professional expert in auditing and compliance, and an expert in professional training and competency development in accounting and auditing, he is also the Operations and Process Manager at Bateel Al Itqan Training Center. He holds memberships in major local and Arab professional associations and has contributed to internationally accredited research, development, and professional training. He has also contributed to numerous international publications and translations.",
     qualifications: [
       "Audit Partner — UHY International",
-      "Member — Egyptian Society of Certified Accountants",
+      "Fellow of — Egyptian Society of Certified Accountants",
       "Member — Arab Federation of Accountants & Auditors",
       "Holder of IPSAS Certificate — ACCA",
       "Treasurer — Association of Accountants & Internal Auditors (AAIA)",
