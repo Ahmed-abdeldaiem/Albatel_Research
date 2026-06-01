@@ -85,10 +85,10 @@ const arMembers: BoardMember[] = [
   {
     name: "أ. وليد منير",
     role: "أمين عام المؤسسة",
-    title: "خبير الضرائب الدولية وتسعير المعاملات — دبلومة دراسات عليا في الضرائب، وتمهيدي ماجستير في الاقتصاد",
+    title: "شريك الضرائب و رئيس قسم الضرائب الدولية",
     image: MEMBER_FILES.walid,
     bio:
-      "خبير في الضرائب الدولية وتسعير المعاملات (Transfer Pricing)، دبلومة دراسات عليا في الضرائب، وتمهيدي ماجستير في الاقتصاد، ومدير التدريب والتطوير بمركز بتيل الإتقان للتدريب، ويشغل عضوية ومناصب قيادية في كبرى الجمعيات المهنية وهو أمين عام جمعية المحاسبين والمدققين الداخليين، وله اسهامات في العديد من المؤلفات والمترجمات الدولية.",
+      "شريك الضرائب و رئيس قسم الضرائب الدولية، مراقب حسابات الشركات المساهمه، امين عام مؤسسة الباتل للبحوث والدراسات، امين عام جمعيه المحاسبين والمدققين الداخليين، مدير التدريب والتطوير مركز بتيل الإتقان للتدريب، شريك تنفيذي لمجموعه من شركات الاستشارات، زميل جمعيه الضرائب المصريه، زميل الجمعيه المصريه للماليه العامه والضرائب، عضو اتحاد المحاسبين والمراجعين العرب، حاصل علي دراسات عليا في الضرائب، حاصل علي شهادة IPSASs من ACCA، والمحاضر الدولي المعتمد من مؤسسة التمويل الدولية احدي منظمات مجموعه البنك الدولي",
     qualifications: [
       "شريك الضرائب ورئيس قسم تسعير المعاملات (Transfer Pricing) — UHY",
       "ماجستير في المالية العامة والضرائب",
@@ -206,10 +206,10 @@ const enMembers: BoardMember[] = [
   {
     name: "Mr. Walid Munir",
     role: "Secretary General of the Foundation",
-    title: "International Tax & Transfer Pricing Expert - Postgraduate Diploma in Taxation and Pre-Master's Degree in Economics",
+    title: "Tax Partner and Head of International Tax",
     image: MEMBER_FILES.walid,
     bio:
-      "An expert in international taxation and transfer pricing, holding a postgraduate diploma in taxation and a pre-Master's degree in economics, he is the Training and Development Manager at Bateel Al Itqan Training Center. He is a member and holds leadership positions in major professional associations and is the Secretary General of the Association of Accountants and Internal Auditors. He has contributed to numerous international publications and translations.",
+      "Tax Partner and Head of International Taxation, Corporate Auditor, Secretary General of Al-Batel Research and Studies Foundation, Secretary General of the Association of Accountants and Internal Auditors, Training and Development Manager at Batel Al-Itqan Training Center, Executive Partner of a group of consulting firms, Fellow of the Egyptian Tax Association, Fellow of the Egyptian Society for Public Finance and Taxation, Member of the Federation of Arab Accountants and Auditors, holds a postgraduate degree in taxation, holds an IPSASs certificate from ACCA, and is an accredited international lecturer with the International Finance Corporation, a member of the World Bank Group.",
     qualifications: [
       "Tax Partner & Head of Transfer Pricing — UHY",
       "M.Sc. in Public Finance & Taxation",
