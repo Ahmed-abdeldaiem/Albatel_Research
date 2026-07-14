@@ -49,5 +49,5 @@ export const BOOK_COVER_CORRUPTION = "/Book4.JPG";
 
 /** صور مصغّرة للقائمة المنسدلة في النافبار */
 export const BOOK_NAV_FOOTBALL = "/Li1.png";
-export const BOOK_NAV_INTERNAL = "/Li2.jfif";
+export const BOOK_NAV_INTERNAL = "/Li2.png";
 export const BOOK_NAV_CORRUPTION = "/Li3.jpeg";
