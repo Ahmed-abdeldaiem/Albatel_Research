@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { LOGO_NAVBAR } from "@/lib/public-assets";
+import { PublicationsNavMenu } from "@/components/home/PublicationsNavMenu";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -154,9 +155,20 @@ export function SiteHeader() {
           <ul className="flex flex-nowrap items-center justify-center gap-1">
             {nav.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className={linkDesktop(item.href)}>
-                  {item.label}
-                </Link>
+                {item.href === "/publications" ? (
+                  <PublicationsNavMenu
+                    variant="desktop"
+                    linkClassName={linkDesktop(item.href)}
+                    isActive={
+                      pathname === "/publications" ||
+                      pathname.startsWith("/publications/")
+                    }
+                  />
+                ) : (
+                  <Link href={item.href} className={linkDesktop(item.href)}>
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -236,13 +248,25 @@ export function SiteHeader() {
           <ul className="flex flex-col gap-1">
             {nav.map((item) => (
               <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={linkMobile(item.href)}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
+                {item.href === "/publications" ? (
+                  <PublicationsNavMenu
+                    variant="mobile"
+                    linkClassName={linkMobile(item.href)}
+                    isActive={
+                      pathname === "/publications" ||
+                      pathname.startsWith("/publications/")
+                    }
+                    onNavigate={() => setMenuOpen(false)}
+                  />
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={linkMobile(item.href)}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

@@ -8,6 +8,9 @@ import {
   BOOK_GALLERY_CAIRO,
   BOOK_GALLERY_JARIR,
   BOOK_GALLERY_RIYADH,
+  BOOK_NAV_CORRUPTION,
+  BOOK_NAV_FOOTBALL,
+  BOOK_NAV_INTERNAL,
   MEMBER_FILES,
 } from "@/lib/public-assets";
 
@@ -19,6 +22,8 @@ export type BookRecord = {
   slug: BookSlug;
   /** غلاف الإصدار — مسار من جذر `public/` (مثل `/Book1.JPG`) */
   cover: string;
+  /** صورة مصغّرة للقائمة المنسدلة في النافبار */
+  navCover: string;
   status: "published" | "coming_soon";
   /** يطابق مفاتيح `pub.*` في ملفات الترجمة */
   i18nKey: "football" | "internal" | "corruption";
@@ -37,6 +42,7 @@ export const BOOKS: BookRecord[] = [
   {
     slug: "football-economics",
     cover: BOOK_COVER_FOOTBALL,
+    navCover: BOOK_NAV_FOOTBALL,
     status: "published",
     i18nKey: "football",
     referenceUrl: "https://www.albatelcpa.com/publications/football-economics",
@@ -51,6 +57,7 @@ export const BOOKS: BookRecord[] = [
   {
     slug: "internal-audit",
     cover: BOOK_COVER_INTERNAL,
+    navCover: BOOK_NAV_INTERNAL,
     status: "published",
     i18nKey: "internal",
     referenceUrl: "https://www.albatelcpa.com/publications/internal-audit",
@@ -65,6 +72,7 @@ export const BOOKS: BookRecord[] = [
   {
     slug: "corruption",
     cover: BOOK_COVER_CORRUPTION,
+    navCover: BOOK_NAV_CORRUPTION,
     status: "published",
     i18nKey: "corruption",
     referenceUrl: SITE_URL,
