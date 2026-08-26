@@ -1,3 +1,4 @@
+import { mediaLocalesAr, mediaLocalesEn } from "@/lib/media-locales";
 import { pubLocalesAr, pubLocalesEn } from "@/lib/pub-locales";
 
 export type Locale = "ar" | "en";
@@ -13,6 +14,14 @@ const ar = {
     viewAllPublications: "عرض كل الإصدارات",
     publicationsMenu: "قائمة الإصدارات",
     publicationsMenuToggle: "فتح قائمة الإصدارات",
+    media: "المركز الإعلامي",
+    mediaMenu: "قائمة المركز الإعلامي",
+    mediaMenuToggle: "فتح قائمة المركز الإعلامي",
+    blog: "المدونة / المقالات",
+    blogDesc: "مقالات تحليلية ومراجعات علمية بأقلام باحثي المؤسسة.",
+    blogSoon: "قريبًا",
+    news: "الأخبار والفعاليات",
+    newsDesc: "أخبار المؤسسة وفعالياتها ومشاركاتها المهنية.",
     contact: "تواصل معنا",
     label: "التنقل الرئيسي",
     openMenu: "فتح القائمة",
@@ -558,6 +567,7 @@ const ar = {
     adNumberAria: "رمز QR لرقم إشهار المؤسسة 4650",
   },
   pub: pubLocalesAr,
+  media: mediaLocalesAr,
   brand: {
     short: "Albatel Research",
     name: "مؤسسة باتل عبدالله الباتل",
@@ -575,6 +585,14 @@ const en = {
     viewAllPublications: "View all publications",
     publicationsMenu: "Publications menu",
     publicationsMenuToggle: "Open publications menu",
+    media: "Media center",
+    mediaMenu: "Media center menu",
+    mediaMenuToggle: "Open media center menu",
+    blog: "Research & Articles",
+    blogDesc: "Analytical articles and scholarly reviews by our researchers.",
+    blogSoon: "Soon",
+    news: "News & Events",
+    newsDesc: "Foundation news, events, and professional engagements.",
     contact: "Contact",
     label: "Main navigation",
     openMenu: "Open menu",
@@ -1120,6 +1138,7 @@ const en = {
     adNumberAria: "QR code for foundation advertisement number 4650",
   },
   pub: pubLocalesEn,
+  media: mediaLocalesEn,
   brand: {
     short: "Albatel Research",
     name: "مؤسسة باتل عبدالله الباتل ",

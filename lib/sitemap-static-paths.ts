@@ -15,7 +15,7 @@ export type SitemapStaticEntry = {
  *
  * **تغطية المسارات (مراجعة مع `app/(site)/…/page.tsx`):**
  * `/` · `/about` · `/board` · `/research-committee` · `/translation-committee`
- * · `/publications` · `/publications/order` · `/contact`
+ * · `/publications` · `/publications/order` · `/news` · `/blog` · `/contact`
  *
  * **عند إضافة صفحة جديدة في `app/(site)/…`** أضف هنا سطرًا واحدًا بالمسار
  * (مثل `/news`) — لا حاجة لتعديل `app/sitemap.ts` نفسه.
@@ -30,5 +30,7 @@ export const SITEMAP_STATIC_ENTRIES: SitemapStaticEntry[] = [
   { path: "/translation-committee", changeFrequency: "monthly", priority: 0.85 },
   { path: "/publications", changeFrequency: "weekly", priority: 0.9 },
   { path: "/publications/order", changeFrequency: "monthly", priority: 0.75 },
+  { path: "/news", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/blog", changeFrequency: "monthly", priority: 0.6 },
   { path: "/contact", changeFrequency: "monthly", priority: 0.85 },
 ];

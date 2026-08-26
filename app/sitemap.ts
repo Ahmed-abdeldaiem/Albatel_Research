@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { BOOKS } from "@/lib/books";
+import { NEWS } from "@/lib/news";
 import { SITEMAP_STATIC_ENTRIES } from "@/lib/sitemap-static-paths";
 import { SITE_URL } from "@/lib/site-url";
 
@@ -8,6 +9,7 @@ import { SITE_URL } from "@/lib/site-url";
  *
  * - **صفحات ثابتة:** من `SITEMAP_STATIC_ENTRIES` في `lib/sitemap-static-paths.ts`
  * - **صفحات الكتب:** من `BOOKS` في `lib/books.ts` (ديناميكي عند إضافة إصدار)
+ * - **صفحات الأخبار:** من `NEWS` في `lib/news.ts` (ديناميكي عند إضافة خبر)
  *
  * **التحقق بعد الرفع:** افتح `https://<نطاقك>/sitemap.xml` و`robots.txt`،
  * وأرسل الخريطة في Google Search Console.
@@ -31,6 +33,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: book.status === "published" ? 0.82 : 0.55,
   }));
 
-  /** الصفحة الرئيسية أولاً ثم الباقي ثم الكتب — ترتيب قراءة أوضح للبشر والأدوات */
-  return [...staticEntries, ...bookEntries];
+  const newsEntries: MetadataRoute.Sitemap = NEWS.map((news) => ({
+    url: `${SITE_URL}/news/${news.slug}`,
+    lastModified: new Date(news.date),
+    changeFrequency: "yearly" as const,
+    priority: 0.75,
+  }));
+
+  /** الصفحة الرئيسية أولاً ثم الباقي ثم الكتب ثم الأخبار — ترتيب قراءة أوضح للبشر والأدوات */
+  return [...staticEntries, ...bookEntries, ...newsEntries];
 }

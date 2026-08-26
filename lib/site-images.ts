@@ -1,3 +1,5 @@
+import { MEDIA_HERO_BLOG, MEDIA_HERO_NEWS } from "@/lib/public-assets";
+
 /** Curated Unsplash assets — replace with your own media when ready. */
 export const siteImages = {
   heroGateway:
@@ -24,4 +26,6 @@ export const siteImages = {
     "/Section_Images/contact_Hero.jpg",
   pagePublications:
     "/esdatar.jpg",
+  pageNews: MEDIA_HERO_NEWS,
+  pageBlog: MEDIA_HERO_BLOG,
 } as const;

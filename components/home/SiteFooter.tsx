@@ -197,6 +197,8 @@ export function SiteFooter() {
     { href: "/research-committee", label: t("nav.research") },
     { href: "/translation-committee", label: t("nav.translation") },
     { href: "/publications", label: t("nav.publications") },
+    { href: "/news", label: t("nav.news") },
+    { href: "/blog", label: t("nav.blog") },
     { href: "/contact", label: t("nav.contact") },
   ];
 

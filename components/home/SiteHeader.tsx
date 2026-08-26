@@ -7,7 +7,18 @@ import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { LOGO_NAVBAR } from "@/lib/public-assets";
+import { MediaNavMenu } from "@/components/home/MediaNavMenu";
 import { PublicationsNavMenu } from "@/components/home/PublicationsNavMenu";
+
+/**
+ * عنصر في النافبار. `menu` يعني أن العنصر يفتح قائمة منسدلة بدل رابط مباشر،
+ * و`href` حينها هو المسار الأساسي المستخدم في تمييز العنصر النشط.
+ */
+type NavItem = {
+  href: string;
+  label: string;
+  menu?: "publications" | "media";
+};
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -15,13 +26,14 @@ export function SiteHeader() {
   const { theme, toggleTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const nav = [
+  const nav: NavItem[] = [
     { href: "/", label: t("nav.home") },
     { href: "/about", label: t("nav.about") },
     { href: "/board", label: t("nav.board") },
     { href: "/research-committee", label: t("nav.research") },
     { href: "/translation-committee", label: t("nav.translation") },
-    { href: "/publications", label: t("nav.publications") },
+    { href: "/publications", label: t("nav.publications"), menu: "publications" },
+    { href: "/news", label: t("nav.media"), menu: "media" },
     { href: "/contact", label: t("nav.contact") },
   ];
 
@@ -40,31 +52,32 @@ export function SiteHeader() {
     };
   }, [menuOpen]);
 
-  const linkDesktop = (href: string) => {
-    const active =
-      href === "/"
-        ? pathname === "/"
-        : pathname === href || pathname.startsWith(`${href}/`);
-    return [
-      "whitespace-nowrap rounded-full px-2.5 py-2 text-[0.75rem] font-semibold transition-all lg:text-[0.72rem] xl:px-3 xl:text-sm",
+  const isPathActive = (href: string) =>
+    href === "/"
+      ? pathname === "/"
+      : pathname === href || pathname.startsWith(`${href}/`);
+
+  /** المركز الإعلامي يضم مسارين، فيُعدّ نشطًا على أيٍّ منهما */
+  const isItemActive = (item: NavItem) =>
+    item.menu === "media"
+      ? isPathActive("/news") || isPathActive("/blog")
+      : isPathActive(item.href);
+
+  const linkDesktop = (active: boolean) =>
+    [
+      "whitespace-nowrap rounded-full px-2.5 py-2 text-[0.75rem] font-semibold transition-all lg:px-2 lg:text-[0.72rem] xl:px-2.5 xl:text-[0.78rem] 2xl:px-3 2xl:text-[0.8rem]",
       active
         ? "bg-brand-600 text-white shadow-md shadow-brand-600/25 dark:bg-brand-500 dark:text-ink-950"
         : "text-slate-600 hover:bg-slate-100 hover:text-brand-700 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-brand-200",
     ].join(" ");
-  };
 
-  const linkMobile = (href: string) => {
-    const active =
-      href === "/"
-        ? pathname === "/"
-        : pathname === href || pathname.startsWith(`${href}/`);
-    return [
+  const linkMobile = (active: boolean) =>
+    [
       "block rounded-xl px-4 py-3.5 text-base font-semibold transition-[color,background-color,transform] duration-200 ease-out active:scale-[0.99]",
       active
         ? "bg-brand-600 text-white dark:bg-brand-500 dark:text-ink-950"
         : "text-slate-900 hover:bg-slate-100 dark:text-slate-100 dark:hover:bg-white/10",
     ].join(" ");
-  };
 
   const Tools = ({ compact }: { compact?: boolean }) => (
     <div
@@ -137,7 +150,8 @@ export function SiteHeader() {
               sizes="48px"
             />
           </span>
-          <span className="hidden min-w-0 sm:block sm:max-w-[14rem] lg:max-w-[16rem]">
+          {/* اسم المؤسسة يُخفى في نطاق lg وحده لإفساح المجال لروابط النافبار الثمانية */}
+          <span className="hidden min-w-0 sm:block sm:max-w-[14rem] lg:hidden xl:block xl:max-w-[10rem] 2xl:max-w-[13rem]">
             <span className="block text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-brand-600 dark:text-brand-300/90">
               {t("brand.short")}
             </span>
@@ -149,28 +163,34 @@ export function SiteHeader() {
 
         {/* روابط سطح المكتب — لا تلف، من xl فما فوق */}
         <nav
-          className="hidden min-w-0 lg:flex lg:flex-1 lg:justify-center lg:px-3 xl:px-4 2xl:px-6"
+          className="hidden min-w-0 lg:flex lg:flex-1 lg:justify-center lg:px-2 xl:px-3 2xl:px-4"
           aria-label={t("nav.label")}
         >
-          <ul className="flex flex-nowrap items-center justify-center gap-1">
-            {nav.map((item) => (
-              <li key={item.href}>
-                {item.href === "/publications" ? (
-                  <PublicationsNavMenu
-                    variant="desktop"
-                    linkClassName={linkDesktop(item.href)}
-                    isActive={
-                      pathname === "/publications" ||
-                      pathname.startsWith("/publications/")
-                    }
-                  />
-                ) : (
-                  <Link href={item.href} className={linkDesktop(item.href)}>
-                    {item.label}
-                  </Link>
-                )}
-              </li>
-            ))}
+          <ul className="flex flex-nowrap items-center justify-center gap-0.5 xl:gap-1">
+            {nav.map((item) => {
+              const active = isItemActive(item);
+              return (
+                <li key={item.href}>
+                  {item.menu === "publications" ? (
+                    <PublicationsNavMenu
+                      variant="desktop"
+                      linkClassName={linkDesktop(active)}
+                      isActive={active}
+                    />
+                  ) : item.menu === "media" ? (
+                    <MediaNavMenu
+                      variant="desktop"
+                      linkClassName={linkDesktop(active)}
+                      isActive={active}
+                    />
+                  ) : (
+                    <Link href={item.href} className={linkDesktop(active)}>
+                      {item.label}
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
@@ -236,39 +256,46 @@ export function SiteHeader() {
             : "pointer-events-none border-transparent bg-transparent shadow-none ring-0"
         } transition-[max-height,opacity,transform,box-shadow,border-color,background-color,visibility] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           menuOpen
-            ? "visible max-h-[min(78vh,28rem)] translate-y-0 opacity-100"
+            ? "visible max-h-[min(82vh,32rem)] translate-y-0 opacity-100"
             : "invisible max-h-0 -translate-y-1 opacity-0"
         }`}
         aria-hidden={!menuOpen}
       >
         <nav
-          className="relative z-[1] min-h-0 max-h-[min(72vh,26rem)] overflow-y-auto overscroll-contain p-4 sm:p-5"
+          className="relative z-[1] min-h-0 max-h-[min(76vh,30rem)] overflow-y-auto overscroll-contain p-4 sm:p-5"
           aria-label={t("nav.label")}
         >
           <ul className="flex flex-col gap-1">
-            {nav.map((item) => (
-              <li key={item.href}>
-                {item.href === "/publications" ? (
-                  <PublicationsNavMenu
-                    variant="mobile"
-                    linkClassName={linkMobile(item.href)}
-                    isActive={
-                      pathname === "/publications" ||
-                      pathname.startsWith("/publications/")
-                    }
-                    onNavigate={() => setMenuOpen(false)}
-                  />
-                ) : (
-                  <Link
-                    href={item.href}
-                    className={linkMobile(item.href)}
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                )}
-              </li>
-            ))}
+            {nav.map((item) => {
+              const active = isItemActive(item);
+              return (
+                <li key={item.href}>
+                  {item.menu === "publications" ? (
+                    <PublicationsNavMenu
+                      variant="mobile"
+                      linkClassName={linkMobile(active)}
+                      isActive={active}
+                      onNavigate={() => setMenuOpen(false)}
+                    />
+                  ) : item.menu === "media" ? (
+                    <MediaNavMenu
+                      variant="mobile"
+                      linkClassName={linkMobile(active)}
+                      isActive={active}
+                      onNavigate={() => setMenuOpen(false)}
+                    />
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={linkMobile(active)}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>

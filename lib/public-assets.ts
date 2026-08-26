@@ -51,3 +51,18 @@ export const BOOK_COVER_CORRUPTION = "/Book4.JPG";
 export const BOOK_NAV_FOOTBALL = "/Li1.png";
 export const BOOK_NAV_INTERNAL = "/Li2.png";
 export const BOOK_NAV_CORRUPTION = "/Li3.jpeg";
+
+/**
+ * صور الهيرو للمركز الإعلامي.
+ * ملف المدونة بصيغة WebP فعليًا، لذا امتداده `.webp` ليطابق محتواه.
+ */
+export const MEDIA_HERO_NEWS = "/news.jpg";
+export const MEDIA_HERO_BLOG = "/blog.webp";
+
+/** صور الخبر الأول (اجتماع مجلس الأمناء) — `public/news/` */
+export const NEWS_BOARD_MEETING_COVER = "/news/news1.png";
+export const NEWS_BOARD_MEETING_GALLERY = [
+  "/news/news1-1.jpeg",
+  "/news/news1-2.jpeg",
+  "/news/news1-3.jpeg",
+] as const;
