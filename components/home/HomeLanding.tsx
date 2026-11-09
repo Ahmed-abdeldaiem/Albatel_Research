@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ContactQuickGrid } from "@/components/contact/ContactQuickGrid";
+import { UpcomingEvent } from "@/components/news/UpcomingEvent";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { PublicAssetImage } from "@/components/publications/PublicAssetImage";
 import { BOOKS_HOME_PROMO_IMAGE, SECTION_IMAGES } from "@/lib/public-assets";
@@ -159,6 +160,8 @@ export function HomeLanding() {
           />
         </div>
       </section>
+
+      <UpcomingEvent tone="white" />
 
       <section className="border-b border-slate-200/70 bg-slate-50 py-16 dark:border-white/5 dark:bg-ink-950 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

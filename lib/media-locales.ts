@@ -95,6 +95,26 @@ export const mediaLocalesAr = {
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
+  // الفعالية القادمة — تُعرض في الرئيسية وصفحة /news (انظر `lib/events.ts`)
+  // ═══════════════════════════════════════════════════════════════════════════
+  events: {
+    kicker: "فعالية قادمة",
+    sectionTitle: "نلتقي في معرض الرياض الدولي للكتاب",
+    items: {
+      riyadhFair2026: {
+        badge: "قريبًا",
+        dateLabel: "ديسمبر 2026",
+        location: "الرياض، المملكة العربية السعودية",
+        title: "معرض الرياض الدولي للكتاب 2026",
+        body: "نشارك بإصداراتنا الثلاثة في معرض الرياض الدولي للكتاب، مع لقاء المؤلفين وحفل توقيع.",
+        note: "تفاصيل الجناح ومواعيد حفل التوقيع تُعلن قريبًا",
+        cta: "إصداراتنا في المعرض",
+        imageAlt: "مؤلفو إصدارات مؤسسة الباتل على منصة التوقيع في معرض الرياض الدولي للكتاب",
+      },
+    },
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════════
   // صفحة المدونة والمقالات — /blog
   // ═══════════════════════════════════════════════════════════════════════════
   blog: {
@@ -215,6 +235,23 @@ export const mediaLocalesEn = {
           "The foundation continues its journey with steady steps, drawing on the expertise of its board members and their ambitious vision for spreading knowledge and serving the academic community.",
         closingQuote: "Together, let us create a lasting impact on knowledge",
         closingCaption: "Board of Trustees · Albatel Foundation",
+      },
+    },
+  },
+
+  events: {
+    kicker: "Upcoming event",
+    sectionTitle: "Meet us at the Riyadh International Book Fair",
+    items: {
+      riyadhFair2026: {
+        badge: "Coming soon",
+        dateLabel: "December 2026",
+        location: "Riyadh, Saudi Arabia",
+        title: "Riyadh International Book Fair 2026",
+        body: "We are taking part with our three publications at the Riyadh International Book Fair, with a meet-the-authors session and a book signing.",
+        note: "Booth details and signing times will be announced soon",
+        cta: "Our publications at the fair",
+        imageAlt: "Authors of Albatel Foundation publications at the book signing platform, Riyadh International Book Fair",
       },
     },
   },

@@ -3,6 +3,8 @@ import { Cairo } from "next/font/google";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { AppProviders } from "@/contexts/AppProviders";
+import { OFFICIAL_EMAIL } from "@/lib/contact";
+import { ORG_PHONE_DISPLAY } from "@/lib/org-contact";
 import { SITE_URL } from "@/lib/site-url";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "slick-carousel/slick/slick.css";
@@ -29,8 +31,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/Logo_trans.png", sizes: "180x180" }],
     shortcut: "/Logo_trans.png",
   },
-  description:
-    "مؤسسة مصرية في الإسكندرية للبحث والتطوير والترجمة والتدريب المهني؛ دراسات تطبيقية، لجان بحث وترجمة، مجلس أمناء، وإصدارات مهنية. للاستفسار: 01553115651.",
+  description: `مؤسسة مصرية في الإسكندرية للبحث والتطوير والترجمة والتدريب المهني؛ دراسات تطبيقية، لجان بحث وترجمة، مجلس أمناء، وإصدارات مهنية. للاستفسار: ${ORG_PHONE_DISPLAY}.`,
   keywords: [
     "بحوث",
     "دراسات",
@@ -47,17 +48,17 @@ export const metadata: Metadata = {
     siteName: "مؤسسة باتل عبدالله الباتل للبحوث والدراسات",
     images: [
       {
-        url: "/logo1_1.png",
-        width: 1239,
-        height: 1501,
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
         alt: "مؤسسة باتل عبدالله الباتل للبحوث والدراسات",
-        type: "image/png",
+        type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/logo1_1.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -66,6 +67,23 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
     { media: "(prefers-color-scheme: dark)", color: "#04080f" },
   ],
+};
+
+/** بيانات منظّمة (schema.org) لمحركات البحث — الهاتف والبريد من الثوابت المشتركة */
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "مؤسسة باتل عبدالله الباتل للبحوث والدراسات",
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo1_1.png`,
+  email: OFFICIAL_EMAIL,
+  telephone: `+20${ORG_PHONE_DISPLAY.replace(/^0/, "")}`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "٨٤ طريق الحرية، باب شرق",
+    addressLocality: "الإسكندرية",
+    addressCountry: "EG",
+  },
 };
 
 const bootScript = `(function(){try{var t=localStorage.getItem("albatel-theme");if(t==="dark")document.documentElement.classList.add("dark");else document.documentElement.classList.remove("dark");var l=localStorage.getItem("albatel-lang");if(l==="en"){document.documentElement.setAttribute("dir","ltr");document.documentElement.setAttribute("lang","en")}else{document.documentElement.setAttribute("dir","rtl");document.documentElement.setAttribute("lang","ar")}}catch(e){document.documentElement.classList.remove("dark")}})();`;
@@ -81,6 +99,10 @@ export default function RootLayout({
         <Script id="albatel-boot" strategy="beforeInteractive">
           {bootScript}
         </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <AppProviders>{children}</AppProviders>
         <SpeedInsights />
       </body>

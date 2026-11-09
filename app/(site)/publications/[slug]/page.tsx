@@ -18,7 +18,21 @@ export async function generateMetadata({
   if (!book) return { title: "إصداراتنا" };
   const pk = book.i18nKey;
   const title = pubLocalesAr[pk].title as string;
-  return { title };
+  const description = `${pubLocalesAr[pk].subtitle as string} — ${pubLocalesAr[pk].authors as string}`;
+  const path = `/publications/${book.slug}`;
+  return {
+    title,
+    description,
+    alternates: { canonical: path },
+    openGraph: {
+      type: "book",
+      title,
+      description,
+      url: path,
+      images: [{ url: book.cover, alt: title }],
+    },
+    twitter: { card: "summary_large_image", title, description, images: [book.cover] },
+  };
 }
 
 export default async function BookPage({ params }: { params: Promise<{ slug: string }> }) {
