@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "المدونة والمقالات",
+  alternates: { canonical: "/blog" },
   description:
     "مقالات تحليلية ومراجعات علمية وقراءات في البحث والترجمة والمراجعة بأقلام باحثي مؤسسة باتل عبدالله الباتل للبحوث والدراسات — قريبًا.",
 };
