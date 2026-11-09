@@ -3,26 +3,29 @@
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { OFFICIAL_EMAIL } from "@/lib/contact";
+import {
+  ORG_MAPS_DIRECTIONS_URL,
+  ORG_MAPS_EMBED_URL,
+  ORG_MAPS_URL,
+} from "@/lib/org-contact";
 
 // =============================================================================
-// LocationSection — قسم "موقعنا"
+// LocationSection — قسم "موقعنا" (صفحة "من نحن" وصفحة "تواصل معنا")
 // تخطيط من عمودين:
 //   • العمود (1): بطاقة تواصل بالعنوان والبريد + زرّان CTA
 //   • العمود (2): خريطة جوجل المضمّنة بإطار مزخرف
-// رابط الخريطة موحَّد للاتجاهات والمضمّن.
+// روابط الخريطة كلها من `lib/org-contact.ts` (الملف التجاري للمؤسسة).
 // =============================================================================
 
-const ADDRESS_QUERY =
-  "84 El-Horeya Rd, Bab Sharqi, Al Attarin, Alexandria Governorate, Egypt";
+const SECONDARY_CTA_CLASS =
+  "group inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-200/80 bg-white px-5 py-3 text-sm font-bold text-slate-800 transition hover:border-brand-400/50 hover:bg-brand-500/5 hover:text-brand-700 dark:border-white/10 dark:bg-ink-950/60 dark:text-slate-200 dark:hover:border-brand-500/30 dark:hover:text-brand-300";
 
-const GOOGLE_MAPS_DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-  ADDRESS_QUERY,
-)}`;
+type Props = {
+  /** الزرّ الثاني: "تواصل معنا" (افتراضي) أو "افتح في خرائط جوجل" داخل صفحة التواصل */
+  secondaryCta?: "contact" | "maps";
+};
 
-const GOOGLE_MAPS_EMBED =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3123.928126709301!2d29.9054736751065!3d31.19941006293017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c38d84255555%3A0x1d51fb06bed5c38b!2zODQgRWwtSG9yZXlhIFJkLCDYqNin2Kgg2LTYsdmC2IwgQWwgQXR0YXJpbiwgQWxleGFuZHJpYSBHb3Zlcm5vcmF0ZSA1MzcyMDU0LCBFZ3lwdA!5e1!3m2!1sen!2ssa!4v1778075503808!5m2!1sen!2ssa";
-
-export function LocationSection() {
+export function LocationSection({ secondaryCta = "contact" }: Props) {
   const { t, locale } = useLanguage();
 
   return (
@@ -119,7 +122,7 @@ export function LocationSection() {
               {/* أزرار CTA */}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href={GOOGLE_MAPS_DIRECTIONS}
+                  href={ORG_MAPS_DIRECTIONS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-l from-brand-500 to-brand-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-brand-500/25 transition hover:brightness-110 dark:text-ink-950"
@@ -130,16 +133,28 @@ export function LocationSection() {
                   />
                   {t("about.locDirectionsCta")}
                 </a>
-                <Link
-                  href="/contact"
-                  className="group inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-200/80 bg-white px-5 py-3 text-sm font-bold text-slate-800 transition hover:border-brand-400/50 hover:bg-brand-500/5 hover:text-brand-700 dark:border-white/10 dark:bg-ink-950/60 dark:text-slate-200 dark:hover:border-brand-500/30 dark:hover:text-brand-300"
-                >
-                  <i
-                    className="fa-solid fa-paper-plane transition group-hover:scale-110"
-                    aria-hidden
-                  />
-                  {t("about.locContactCta")}
-                </Link>
+                {secondaryCta === "maps" ? (
+                  <a
+                    href={ORG_MAPS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={SECONDARY_CTA_CLASS}
+                  >
+                    <i
+                      className="fa-solid fa-map-location-dot transition group-hover:scale-110"
+                      aria-hidden
+                    />
+                    {t("about.locOpenMapsCta")}
+                  </a>
+                ) : (
+                  <Link href="/contact" className={SECONDARY_CTA_CLASS}>
+                    <i
+                      className="fa-solid fa-paper-plane transition group-hover:scale-110"
+                      aria-hidden
+                    />
+                    {t("about.locContactCta")}
+                  </Link>
+                )}
               </div>
             </div>
           </div>
@@ -158,7 +173,7 @@ export function LocationSection() {
               />
 
               <iframe
-                src={GOOGLE_MAPS_EMBED}
+                src={ORG_MAPS_EMBED_URL}
                 title={t("about.locMapTitle")}
                 loading="lazy"
                 allowFullScreen

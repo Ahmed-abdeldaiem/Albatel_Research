@@ -1,5 +1,6 @@
 "use client";
 
+import { LocationSection } from "@/components/about/LocationSection";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { ContactQuickGrid } from "@/components/contact/ContactQuickGrid";
 import { PageHero } from "@/components/layout/PageHero";
@@ -44,6 +45,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      <LocationSection secondaryCta="maps" />
     </>
   );
 }

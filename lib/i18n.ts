@@ -496,6 +496,7 @@ const ar = {
     locEmailLabel: "البريد الرسمي",
     locDirectionsCta: "احصل على الاتجاهات",
     locContactCta: "تواصل معنا",
+    locOpenMapsCta: "افتح في خرائط جوجل",
     locMapTitle: "موقع مؤسسة الباتل على خريطة جوجل",
 
     // ───── دعوة ختامية ─────
@@ -552,6 +553,7 @@ const ar = {
     org: "مؤسسة باتل عبدالله الباتل للبحوث والدراسات",
     country: "مصر — الإسكندرية",
     whatsappAria: "فتح واتساب على هذا الرقم",
+    mapAria: "عرض موقع المؤسسة على خرائط جوجل",
     whatsappFloat: "تواصل معنا عبر واتساب",
     rights: "جميع الحقوق محفوظة.",
     followUs: "تابعنا على",
@@ -1067,6 +1069,7 @@ const en = {
     locEmailLabel: "Official email",
     locDirectionsCta: "Get directions",
     locContactCta: "Contact us",
+    locOpenMapsCta: "Open in Google Maps",
     locMapTitle: "Albatel Foundation location on Google Maps",
 
     // ───── Closing CTA ─────
@@ -1123,6 +1126,7 @@ const en = {
     org: "Batel Abdullah Al-Batel Foundation for Research and Studies",
     country: "Egypt — Alexandria",
     whatsappAria: "Open WhatsApp for this number",
+    mapAria: "View the foundation location on Google Maps",
     whatsappFloat: "Contact us on WhatsApp",
     rights: "All rights reserved.",
     followUs: "Follow us on",

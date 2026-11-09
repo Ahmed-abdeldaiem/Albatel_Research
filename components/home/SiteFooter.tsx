@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ORG_PHONE_DISPLAY, ORG_WHATSAPP_URL } from "@/lib/org-contact";
+import { ORG_MAPS_URL, ORG_PHONE_DISPLAY, ORG_WHATSAPP_URL } from "@/lib/org-contact";
 
 const DEV_LINKEDIN = "https://www.linkedin.com/in/ahmed-abdeldaiem-a26079227/";
 const DEV_GMAIL = "ahmadabdeldaiem18@gmail.com";
@@ -222,7 +222,16 @@ export function SiteFooter() {
               {t("footer.org")}
             </p>
             <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-              {t("footer.country")}
+              <a
+                href={ORG_MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-start gap-2 transition hover:text-brand-700 dark:hover:text-brand-300"
+                aria-label={t("footer.mapAria")}
+              >
+                <i className="fa-solid fa-location-dot mt-1 text-xs text-brand-600 dark:text-brand-400" aria-hidden />
+                {t("contact.addressVal")}
+              </a>
             </p>
             <p className="text-sm">
               <a

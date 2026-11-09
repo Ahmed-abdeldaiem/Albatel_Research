@@ -1,4 +1,4 @@
-import { ORG_PHONE_DISPLAY, ORG_WHATSAPP_URL } from "@/lib/org-contact";
+import { ORG_MAPS_URL, ORG_PHONE_DISPLAY, ORG_WHATSAPP_URL } from "@/lib/org-contact";
 
 export type ContactItem = {
   label: string;
@@ -33,7 +33,7 @@ export function buildContactItems(t: (key: string) => string): ContactItem[] {
     {
       label: t("contact.address"),
       value: t("contact.addressVal"),
-      href: "https://maps.google.com/?q=84+Tariq+Al+Hurriya+Bab+Sharqi+Alexandria+Egypt",
+      href: ORG_MAPS_URL,
       icon: "fa-location-dot",
       external: true,
     },

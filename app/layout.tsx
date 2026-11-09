@@ -4,7 +4,7 @@ import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { AppProviders } from "@/contexts/AppProviders";
 import { OFFICIAL_EMAIL } from "@/lib/contact";
-import { ORG_PHONE_DISPLAY } from "@/lib/org-contact";
+import { ORG_GEO, ORG_MAPS_URL, ORG_PHONE_DISPLAY } from "@/lib/org-contact";
 import { SITE_URL } from "@/lib/site-url";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "slick-carousel/slick/slick.css";
@@ -83,6 +83,11 @@ const organizationJsonLd = {
     streetAddress: "٨٤ طريق الحرية، باب شرق",
     addressLocality: "الإسكندرية",
     addressCountry: "EG",
+  },
+  location: {
+    "@type": "Place",
+    geo: { "@type": "GeoCoordinates", latitude: ORG_GEO.lat, longitude: ORG_GEO.lng },
+    hasMap: ORG_MAPS_URL,
   },
 };
 
