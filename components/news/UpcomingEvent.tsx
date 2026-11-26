@@ -61,7 +61,7 @@ export function UpcomingEvent({ tone = "white" }: Props) {
             <PublicAssetImage
               src={event.image}
               alt={k("imageAlt")}
-              className="object-[50%_30%]"
+              className={event.imagePosition}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
             <span className="absolute end-4 top-4 rounded-full bg-sky-500 px-3.5 py-1 text-xs font-bold text-white shadow-md shadow-sky-900/30">

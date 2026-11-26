@@ -1,4 +1,4 @@
-import { BOOK_GALLERY_RIYADH } from "@/lib/public-assets";
+import { BOOK_GALLERY_CAIRO } from "@/lib/public-assets";
 
 // =============================================================================
 // الفعالية القادمة — تُعرض في الصفحة الرئيسية وأعلى صفحة /news
@@ -12,16 +12,20 @@ import { BOOK_GALLERY_RIYADH } from "@/lib/public-assets";
 
 export type EventRecord = {
   /** يطابق مفاتيح `media.events.items.*` في ملفات الترجمة */
-  i18nKey: "riyadhFair2026";
+  i18nKey: "cairoFairNext";
   /** صورة من `public/` — تُعرض بـ `<img>` لأن `.jfif` لا يمرّ عبر `next/image` */
   image: string;
+  /** موضع اقتصاص الصورة (صنف Tailwind `object-*`) ليبقى الأهم ظاهرًا */
+  imagePosition: string;
   /** وجهة زرّ الدعوة */
   ctaHref: string;
 };
 
 export const UPCOMING_EVENT: EventRecord | null = {
-  i18nKey: "riyadhFair2026",
-  image: BOOK_GALLERY_RIYADH[0],
+  i18nKey: "cairoFairNext",
+  /** ندوة "اقتصاديات كرة القدم" في الدورة الماضية — شعار المعرض ظاهر خلف المؤلفين */
+  image: BOOK_GALLERY_CAIRO[3],
+  imagePosition: "object-[55%_40%]",
   ctaHref: "/publications",
 };
 

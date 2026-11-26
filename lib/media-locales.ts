@@ -99,17 +99,17 @@ export const mediaLocalesAr = {
   // ═══════════════════════════════════════════════════════════════════════════
   events: {
     kicker: "فعالية قادمة",
-    sectionTitle: "نلتقي في معرض الرياض الدولي للكتاب",
+    sectionTitle: "على موعد مع معرض القاهرة الدولي للكتاب",
     items: {
-      riyadhFair2026: {
+      cairoFairNext: {
         badge: "قريبًا",
-        dateLabel: "ديسمبر 2026",
-        location: "الرياض، المملكة العربية السعودية",
-        title: "معرض الرياض الدولي للكتاب 2026",
-        body: "نشارك بإصداراتنا الثلاثة في معرض الرياض الدولي للكتاب، مع لقاء المؤلفين وحفل توقيع.",
-        note: "تفاصيل الجناح ومواعيد حفل التوقيع تُعلن قريبًا",
-        cta: "إصداراتنا في المعرض",
-        imageAlt: "مؤلفو إصدارات مؤسسة الباتل على منصة التوقيع في معرض الرياض الدولي للكتاب",
+        dateLabel: "الموعد يُعلن قريبًا",
+        location: "القاهرة، جمهورية مصر العربية",
+        title: "معرض القاهرة الدولي للكتاب — الدورة القادمة",
+        body: "بعد لقاءٍ مثمر مع القرّاء في الدورة الماضية، نتطلّع للمشاركة بإصداراتنا في الدورة القادمة من معرض القاهرة الدولي للكتاب، مع لقاءات مع المؤلفين وحفلات توقيع.",
+        note: "سنُعلن موعد المعرض ومكان الجناح ومواعيد حفلات التوقيع فور تحديدها",
+        cta: "تعرّف على إصداراتنا",
+        imageAlt: "مؤلفو كتاب اقتصاديات كرة القدم في ندوة بمعرض القاهرة الدولي للكتاب",
       },
     },
   },
@@ -241,17 +241,17 @@ export const mediaLocalesEn = {
 
   events: {
     kicker: "Upcoming event",
-    sectionTitle: "Meet us at the Riyadh International Book Fair",
+    sectionTitle: "Our next stop: the Cairo International Book Fair",
     items: {
-      riyadhFair2026: {
+      cairoFairNext: {
         badge: "Coming soon",
-        dateLabel: "December 2026",
-        location: "Riyadh, Saudi Arabia",
-        title: "Riyadh International Book Fair 2026",
-        body: "We are taking part with our three publications at the Riyadh International Book Fair, with a meet-the-authors session and a book signing.",
-        note: "Booth details and signing times will be announced soon",
-        cta: "Our publications at the fair",
-        imageAlt: "Authors of Albatel Foundation publications at the book signing platform, Riyadh International Book Fair",
+        dateLabel: "Dates to be announced",
+        location: "Cairo, Egypt",
+        title: "Cairo International Book Fair — next edition",
+        body: "After a rewarding meeting with readers at the last edition, we look forward to taking part with our publications in the next Cairo International Book Fair, with meet-the-authors sessions and book signings.",
+        note: "We will announce the fair dates, our booth location and signing times as soon as they are confirmed",
+        cta: "Explore our publications",
+        imageAlt: "Authors of Football Economics at a seminar during the Cairo International Book Fair",
       },
     },
   },
